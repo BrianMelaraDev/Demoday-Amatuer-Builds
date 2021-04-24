@@ -1,0 +1,112 @@
+#hero h2{
+  margin: 5rem;
+}
+#hero{
+  margin: 0 0 3rem 0;
+}
+#profileFirstId{
+  background-image: url('images/customkeyboard.png');
+	background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#profileFeed{
+  height: 700px;
+  width: 60%;
+  border: 1px solid;
+  padding: 0;
+  margin: 3%;
+  background-color: rgb(225,225,225,.6);
+  border-radius: 37px;
+  overflow: auto;
+  font-size: .5rem;
+  /* display: flex;
+  justify-content: space-around; */
+}
+#profileSection{
+  height: 500px;
+  width: 27%;
+  border: 1px solid black;
+  padding: 0;
+  margin: 3% 2% 3% 5%;
+  background-color: rgb(52 40 40 / 91%);
+  border-radius: 37px;
+  /* display: flex;
+  
+  justify-content: center; */
+
+}
+
+#profileFirstId button{
+  display: flex;
+  background-color: cornsilk;
+  justify-content: center;
+  width: 83%;
+  height: 79px;
+  margin: 2rem 8%;
+  border: 1px solid black;
+  border-radius: 63px;
+}
+#profileFirstId button:hover{
+  background-color: slategray;
+}
+i{
+  font-size: 2rem;
+}
+#profileFeed li{
+  height: auto;
+  width: 43%;
+  margin: 1rem;
+  float: left;
+  border: 3px solid black;
+  padding: 0;
+  list-style: none;
+  border-radius: 20px;
+  padding: 9px;
+}
+#profileFeed div{
+  
+}
+#profileFeed section{
+  border:1px solid black;
+}
+#profileFeed img{
+  height: 212px;
+  float: left;
+  margin: 0.8rem;
+  width: 258px;
+}
+ul li div+div h2{
+  font-size: 1.1rem;
+    color: black;
+    font-weight: 800;
+}
+.fa-trash:hover:before{
+  color: red;
+}
+.inactive{
+  display: none;
+}
+@media screen and (max-width:1450px){
+  #profileFeed{
+    width: 89%;
+    height: 695px;
+    margin-left: 7%;
+  }
+  #profileFirstId button{
+    width:150px ;
+  }
+  #profileSection{
+    width: 92%;
+    height: 150px;
+    margin-bottom: 0;
+    display: flex;
+  }
+}
+@media screen and (max-width:930px){
+  #profileFeed li{
+    width: 79%;
+    margin-left: 3rem;
+  }
+}
