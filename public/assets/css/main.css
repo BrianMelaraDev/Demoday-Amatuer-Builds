@@ -94,6 +94,7 @@ input, select, textarea {
 #firstId section img{
 	height: 150px;
 	    width: 104%;
+		margin: 7%;
 
 }
 #firstId section h2 , #firstId section h3{
@@ -186,11 +187,9 @@ input, select, textarea {
 	font-weight: 800;
 }
 #firstId ul{
-	width: 80%;
-	height: 100%;
-	float: right;
 	padding: 0;
-	margin: 2%;
+    margin: 2%;
+    float: left;
 }
 height: 101px;
 	width: 103%;

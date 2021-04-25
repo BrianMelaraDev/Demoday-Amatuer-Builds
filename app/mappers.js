@@ -11,4 +11,6 @@ const mapPostsAndComments = (posts, comments) => {
     // console.log("mapped posts", mappedPosts)
 }
 
+
+
 exports.mapPostsAndComments = mapPostsAndComments
