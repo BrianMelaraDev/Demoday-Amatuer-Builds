@@ -29,7 +29,6 @@ let coolerImg
 let psuImg
 let gpuImg
 let storageImg
- 
 function saved( currentMoboName, currentCpuName, currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName, currentStorageName ,moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg){
  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   
@@ -49,9 +48,7 @@ function saved( currentMoboName, currentCpuName, currentRamName , currentCaseNam
  psuImg =psuImg
  gpuImg =gpuImg
  storageImg= storageImg
- console.log('this is the storage name',storageName);
-  // post(total ,currentMoboName , currentCpuName ,currentRamName)
-  // console.log('from saved', totalCost);
+ console.log('this is the storage name', storageName);
   document.getElementById('priceSpan').innerText= total
   // console.log('this is the name and cost', moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg);
 }
@@ -60,13 +57,9 @@ function post(){
     fetch('buildInfo', {
     method: 'post',
     headers: {'Content-Type' : 'application/json'},
-    body: JSON.stringify({ moboName: moboName , cpuName: cpuName, ramName: ramName, caseName: caseName, coolerName:coolerName, psuName:psuName, gpuName:gpuName, totalCost:total , cpuImg:cpuImg , gpuImg: gpuImg ,ramImg:ramImg ,moboImg:moboImg , storageImg:storageImg , psuImg:psuImg, caseImg:caseImg, coolerImg:coolerImg })
+    body: JSON.stringify({ moboName: moboName , cpuName: cpuName, ramName: ramName, caseName: caseName, storageName:storageName ,coolerName:coolerName, psuName:psuName, gpuName:gpuName, totalCost:total , cpuImg:cpuImg , gpuImg: gpuImg ,ramImg:ramImg ,moboImg:moboImg , storageImg:storageImg , psuImg:psuImg, caseImg:caseImg, coolerImg:coolerImg })
   }).then(() => { window.location.reload() })  
 }
-// function post(){
-
-
-
   var cpu = []
   var gpu =[]
   var mobo = []
@@ -76,12 +69,6 @@ function post(){
   var pcCase = []
   var cooler = []
   const mapPcParts = (parts)=>{
-    // const gpu 
-    // const mobo
-    // const ram 
-    // const storage 
-    // const powerSupply
-    // const pcCase
   const allPcBuildParts = Object.values(parts).forEach((pc) => {
   cpu.push(pc.filter((part) => part.type === "CPU"));
   gpu.push(pc.filter((part) => part.type === "GPU"));
@@ -111,12 +98,8 @@ function moboAOption4(){
   document.getElementById('moboImg').src = `assets/css/${moboImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
-  console.log(moboName , moboImg, cpuName , moboCost, total);
-  
-
 }
 function cpuBOption4(){
-  console.log(cpu[1][0]);
   cpuName = cpu[1][0].product
   cpuCost = cpu[1][0].cost
   cpuImg = cpu[1][0].img
@@ -138,7 +121,6 @@ function cpuBOption4(){
   document.getElementById('priceSpan').innerText= total
 }
 function gpuAOption4(){
-  
   gpuCost = gpu[0][1].cost
   gpuName= gpu[0][1].product
   gpuImg = gpu[0][1].img
@@ -148,10 +130,8 @@ function gpuAOption4(){
   document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
-
 }
 function gpuBOption4(){
-  
   gpuCost = gpu[2][0].cost
   gpuName= gpu[2][0].product
   gpuImg = gpu[2][0].img
@@ -161,10 +141,8 @@ function gpuBOption4(){
   document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
-
 }
 function gpuCOption4(){
-  
   gpuCost = gpu[3][0].cost
   gpuName= gpu[3][0].product
   gpuImg = gpu[3][0].img
@@ -174,7 +152,6 @@ function gpuCOption4(){
   document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
-
 }
 function ramAOption4(){
   ramCost = ram[3][0].cost
@@ -189,14 +166,12 @@ function ramAOption4(){
   document.getElementById('priceSpan').innerText= total
 }
 function storageAOption4(){
-  console.log(storage[0][1]);
   storageCost = storage[0][1].cost
   storageName = storage[0][1].product
   storageImg = storage[0][1].img
   document.querySelector('.storageBrand').innerText =storage[0][1].brand
   document.querySelector('.storageProduct').innerText =storageName
   document.querySelector('.storageCost').innerText = storageCost
-
   document.getElementById('storageImg').src = `assets/css/${storageImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
@@ -220,7 +195,6 @@ function storageCOption4(){
   document.querySelector('.storageBrand').innerText =storage[0][3].brand
   document.querySelector('.storageProduct').innerText =storageName
   document.querySelector('.storageCost').innerText = storageCost
-  console.log(storageImg);
   document.getElementById('storageImg').src = `assets/css/${storageImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
@@ -237,7 +211,6 @@ function psuAOption4(){
   document.getElementById('priceSpan').innerText= total
 }
 function caseAOption4(){
-  console.log(pcCase[2][0]);
   caseName= pcCase[2][0].product
   caseCost= pcCase[2][0].cost
   caseImg = pcCase[2][0].img
@@ -249,7 +222,6 @@ function caseAOption4(){
   document.getElementById('priceSpan').innerText= total
 }
 function caseBOption4(){
-  console.log(pcCase[2][0]);
   caseName= pcCase[3][0].product
   caseCost= pcCase[3][0].cost
   caseImg = pcCase[3][0].img
@@ -260,8 +232,6 @@ function caseBOption4(){
   document.getElementById('caseImg').src = `assets/css/${pcCase[3][0].img}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
-
-  
 }
 function coolerAOption4() {
   coolerName= cooler[3][0].product
@@ -297,17 +267,8 @@ function coolerCOption4() {
   document.getElementById('coolerImg').src = `assets/css/${cooler[0][1].img}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
-
 }
-
-
-
-
-
-
-
-
-
+//start of button $500
 function moboAOption5(){
   cpuName = cpu[3][0].product
   cpuCost = cpu[3][0].cost
@@ -331,7 +292,7 @@ function moboAOption5(){
 
 }
 function cpuBOption5(){
-  console.log(cpu[1][0]);
+ 
   cpuName = cpu[1][0].product
   cpuCost = cpu[1][0].cost
   cpuImg = cpu[1][0].img
@@ -379,10 +340,10 @@ function gpuBOption5(){
 }
 function gpuCOption5(){
   
-  gpuCost = gpu[3][0].cost
-  gpuName= gpu[3][0].product
-  gpuImg = gpu[3][0].img
-  document.querySelector('.gpuBrand').innerText =gpu[3][0].brand
+  gpuCost = gpu[1][1].cost
+  gpuName= gpu[1][1].product
+  gpuImg = gpu[1][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[1][1].brand
   document.querySelector('.gpuProduct').innerText =gpuName
   document.querySelector('.gpuCost').innerText = gpuCost
   document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
@@ -434,15 +395,14 @@ function storageCOption5(){
   document.querySelector('.storageBrand').innerText =storage[0][3].brand
   document.querySelector('.storageProduct').innerText =storageName
   document.querySelector('.storageCost').innerText = storageCost
-  console.log(storageImg);
   document.getElementById('storageImg').src = `assets/css/${storageImg}`
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
 }
 function psuAOption5(){
-  psuName= cooler[0][2].product
-  psuCost= cooler[0][2].cost
-  psuImg = cooler[0][2].img
+  psuName= power[0][1].product
+  psuCost= power[0][1].cost
+  psuImg = power[0][1].img
   document.querySelector('.psuBrand').innerText =power[0][1].brand
   document.querySelector('.psuProduct').innerText =power[0][1].product
   document.querySelector('.psuCost').innerText = power[0][1].cost
@@ -515,9 +475,651 @@ function coolerCOption5() {
   document.getElementById('priceSpan').innerText= total
 
 }
+//start of button$600
 
 
 
+
+
+
+
+
+
+
+
+
+
+function moboAOption6(){
+  cpuName = cpu[0][1].product
+  cpuCost = cpu[0][1].cost
+  cpuImg = cpu[0][1].img
+  moboName = mobo[0][1].product
+  moboImg = mobo[0][1].img
+  moboCost = mobo[0][1].cost
+  document.querySelector('.cpuBrand').innerText =cpu[0][1].brand
+  document.querySelector('.cpuProduct').innerText =cpuName
+  document.querySelector('.clock').innerText = cpu[0][1].clockSpeed
+  document.querySelector('.cpuCost').innerText = cpuCost
+  document.getElementById('cpuImg').src = `assets/css/${cpuImg}`
+  document.querySelector('.moboBrand').innerText =mobo[0][1].brand
+  document.querySelector('.moboProduct').innerText =moboName
+  document.querySelector('.moboCost').innerText = moboCost
+  document.getElementById('moboImg').src = `assets/css/${moboImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function cpuBOption6(){
+  cpuName = cpu[1][0].product
+  cpuCost = cpu[1][0].cost
+  cpuImg = cpu[1][0].img
+  moboName = mobo[0][0].product
+  moboImg = mobo[0][0].img
+  moboCost = mobo[0][0].cost
+  console.log(mobo);
+  document.querySelector('.cpuBrand').innerText =cpu[1][0].brand
+  document.querySelector('.cpuProduct').innerText =cpu[1][0].product
+  document.querySelector('.clock').innerText = cpu[1][0].clockSpeed
+  document.querySelector('.cpuCost').innerText = cpu[1][0].cost
+  document.querySelector('.moboBrand').innerText =mobo[0][0].brand
+  document.querySelector('.moboProduct').innerText =moboName
+  document.querySelector('.moboCost').innerText = moboCost
+  document.getElementById('moboImg').src = `assets/css/${moboImg}`
+  cpuCost = cpu[1][0].cost
+  document.getElementById('cpuImg').src = `assets/css/${cpu[1][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function gpuAOption6(){
+  gpuCost = gpu[0][1].cost
+  gpuName= gpu[0][1].product
+  gpuImg = gpu[0][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[0][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function gpuBOption6(){
+  gpuCost = gpu[2][0].cost
+  gpuName= gpu[2][0].product
+  gpuImg = gpu[2][0].img
+  document.querySelector('.gpuBrand').innerText =gpu[2][0].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function gpuCOption6(){
+  gpuCost = gpu[1][1].cost
+  gpuName= gpu[1][1].product
+  gpuImg = gpu[1][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[1][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function ramAOption6(){
+  ramCost = ram[3][0].cost
+  ramName = ram[3][0].product
+  ramImg = ram[3][0].img
+  document.querySelector('.ramBrand').innerText =ram[3][0].brand
+  document.querySelector('.ramProduct').innerText =ramName
+  document.querySelector('.ramCost').innerText = ramCost
+  document.querySelector('.ramClock').innerText=ram[3][0].clockSpeed
+  document.getElementById('ramImg').src = `assets/css/${ramImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function storageAOption6(){
+  storageCost = storage[0][1].cost
+  storageName = storage[0][1].product
+  storageImg = storage[0][1].img
+  document.querySelector('.storageBrand').innerText =storage[0][1].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function storageBOption6(){
+  storageCost = storage[0][2].cost
+  storageName = storage[0][2].product
+  storageImg = storage[0][2].img
+  document.querySelector('.storageBrand').innerText =storage[0][2].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function storageCOption6(){
+  storageCost = storage[0][3].cost
+  storageName = storage[0][3].product
+  storageImg = storage[0][3].img
+  document.querySelector('.storageBrand').innerText =storage[0][3].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function psuAOption6(){
+  psuName= power[0][1].product
+  psuCost= power[0][1].cost
+  psuImg = power[0][1].img
+  document.querySelector('.psuBrand').innerText =power[0][1].brand
+  document.querySelector('.psuProduct').innerText =power[0][1].product
+  document.querySelector('.psuCost').innerText = power[0][1].cost
+  document.getElementById('psuImg').src = `assets/css/${power[0][1].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function caseAOption6(){
+  caseName= pcCase[2][0].product
+  caseCost= pcCase[2][0].cost
+  caseImg = pcCase[2][0].img
+  document.querySelector('.caseBrand').innerText =pcCase[2][0].brand
+  document.querySelector('.caseProduct').innerText =pcCase[2][0].product
+  document.querySelector('.caseCost').innerText = pcCase[2][0].cost
+  document.getElementById('caseImg').src = `assets/css/${pcCase[2][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function caseBOption6(){
+  caseName= pcCase[3][0].product
+  caseCost= pcCase[3][0].cost
+  caseImg = pcCase[3][0].img
+  document.querySelector('.caseBrand').innerText =pcCase[3][0].brand
+  document.querySelector('.caseProduct').innerText =pcCase[3][0].product
+  document.querySelector('.caseCost').innerText = pcCase[3][0].cost
+  caseCost =pcCase[3][0].cost
+  document.getElementById('caseImg').src = `assets/css/${pcCase[3][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function coolerAOption6() {
+  coolerName= cooler[3][0].product
+  coolerCost= cooler[3][0].cost
+  coolerImg = cooler[3][0].img
+  document.querySelector('.coolerBrand').innerText =cooler[3][0].brand
+  document.querySelector('.coolerProduct').innerText =cooler[3][0].product
+  document.querySelector('.coolerCost').innerText = cooler[3][0].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[3][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function coolerBOption6() {
+  coolerName= cooler[0][2].product
+  coolerCost= cooler[0][2].cost
+  coolerImg = cooler[0][2].img
+  document.querySelector('.coolerBrand').innerText =cooler[0][2].brand
+  document.querySelector('.coolerProduct').innerText =cooler[0][2].product
+  document.querySelector('.coolerCost').innerText = cooler[0][2].cost
+  coolerCost = cooler[0][2].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[0][2].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function coolerCOption6() {
+  coolerName= cooler[0][1].product
+  coolerCost= cooler[0][1].cost
+  coolerImg = cooler[0][1].img
+  document.querySelector('.coolerBrand').innerText =cooler[0][1].brand
+  document.querySelector('.coolerProduct').innerText =cooler[0][1].product
+  document.querySelector('.coolerCost').innerText = cooler[0][1].cost
+  coolerCost = cooler[0][1].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[0][1].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+
+
+
+
+
+
+
+
+
+//start of button 700
+function moboAOption7(){
+  cpuName = cpu[3][0].product
+  cpuCost = cpu[3][0].cost
+  cpuImg = cpu[3][0].img
+  moboName = mobo[3][0].product
+  moboImg = mobo[3][0].img
+  moboCost = mobo[3][0].cost
+  document.querySelector('.cpuBrand').innerText =cpu[3][0].brand
+  document.querySelector('.cpuProduct').innerText =cpuName
+  document.querySelector('.clock').innerText = cpu[3][0].clockSpeed
+  document.querySelector('.cpuCost').innerText = cpuCost
+  document.getElementById('cpuImg').src = `assets/css/${cpuImg}`
+  document.querySelector('.moboBrand').innerText =mobo[3][0].brand
+  document.querySelector('.moboProduct').innerText =moboName
+  document.querySelector('.moboCost').innerText = moboCost
+  document.getElementById('moboImg').src = `assets/css/${moboImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+  console.log(moboName , moboImg, cpuName , moboCost, total);
+  
+
+}
+function cpuBOption7(){
+ 
+  cpuName = cpu[1][0].product
+  cpuCost = cpu[1][0].cost
+  cpuImg = cpu[1][0].img
+  moboName = mobo[0][0].product
+  moboImg = mobo[0][0].img
+  moboCost = mobo[0][0].cost
+  console.log(mobo);
+  document.querySelector('.cpuBrand').innerText =cpu[1][0].brand
+  document.querySelector('.cpuProduct').innerText =cpu[1][0].product
+  document.querySelector('.clock').innerText = cpu[1][0].clockSpeed
+  document.querySelector('.cpuCost').innerText = cpu[1][0].cost
+  document.querySelector('.moboBrand').innerText =mobo[0][0].brand
+  document.querySelector('.moboProduct').innerText =moboName
+  document.querySelector('.moboCost').innerText = moboCost
+  document.getElementById('moboImg').src = `assets/css/${moboImg}`
+  cpuCost = cpu[1][0].cost
+  document.getElementById('cpuImg').src = `assets/css/${cpu[1][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function gpuAOption7(){
+  gpuCost = gpu[0][1].cost
+  gpuName= gpu[0][1].product
+  gpuImg = gpu[0][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[0][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function gpuBOption7(){
+  console.log(gpu[1][1]);
+  gpuCost = gpu[1][1].cost
+  gpuName= gpu[1][1].product
+  gpuImg = gpu[1][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[1][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function gpuCOption7(){
+  
+  gpuCost = gpu[1][1].cost
+  gpuName= gpu[1][1].product
+  gpuImg = gpu[1][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[1][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function ramAOption7(){
+  ramCost = ram[4][0].cost
+  ramName = ram[4][0].product
+  ramImg = ram[4][0].img
+  document.querySelector('.ramBrand').innerText =ram[4][0].brand
+  document.querySelector('.ramProduct').innerText =ramName
+  document.querySelector('.ramCost').innerText = ramCost
+  document.querySelector('.ramClock').innerText=ram[4][0].clockSpeed
+  document.getElementById('ramImg').src = `assets/css/${ramImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function storageAOption7(){
+  console.log(storage[0][1]);
+  storageCost = storage[0][1].cost
+  storageName = storage[0][1].product
+  storageImg = storage[0][1].img
+  document.querySelector('.storageBrand').innerText =storage[0][1].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function storageBOption7(){
+  storageCost = storage[0][2].cost
+  storageName = storage[0][2].product
+  storageImg = storage[0][2].img
+  document.querySelector('.storageBrand').innerText =storage[0][2].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function storageCOption7(){
+  storageCost = storage[0][3].cost
+  storageName = storage[0][3].product
+  storageImg = storage[0][3].img
+  document.querySelector('.storageBrand').innerText =storage[0][3].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function psuAOption7(){
+  psuName= power[0][1].product
+  psuCost= power[0][1].cost
+  psuImg = power[0][1].img
+  document.querySelector('.psuBrand').innerText =power[0][1].brand
+  document.querySelector('.psuProduct').innerText =power[0][1].product
+  document.querySelector('.psuCost').innerText = power[0][1].cost
+  document.getElementById('psuImg').src = `assets/css/${power[0][1].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function caseAOption7(){
+  caseName= pcCase[2][0].product
+  caseCost= pcCase[2][0].cost
+  caseImg = pcCase[2][0].img
+  document.querySelector('.caseBrand').innerText =pcCase[2][0].brand
+  document.querySelector('.caseProduct').innerText =pcCase[2][0].product
+  document.querySelector('.caseCost').innerText = pcCase[2][0].cost
+  document.getElementById('caseImg').src = `assets/css/${pcCase[2][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+  
+}
+function caseBOption7(){
+  caseName= pcCase[3][0].product
+  caseCost= pcCase[3][0].cost
+  caseImg = pcCase[3][0].img
+  document.querySelector('.caseBrand').innerText =pcCase[3][0].brand
+  document.querySelector('.caseProduct').innerText =pcCase[3][0].product
+  document.querySelector('.caseCost').innerText = pcCase[3][0].cost
+  document.getElementById('caseImg').src = `assets/css/${pcCase[3][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+  
+}
+function coolerAOption7() {
+  coolerName= cooler[3][0].product
+  coolerCost= cooler[3][0].cost
+  coolerImg = cooler[3][0].img
+  document.querySelector('.coolerBrand').innerText =cooler[3][0].brand
+  document.querySelector('.coolerProduct').innerText =cooler[3][0].product
+  document.querySelector('.coolerCost').innerText = cooler[3][0].cost
+  coolerCost = cooler[3][0].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[3][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function coolerBOption7() {
+  coolerName= cooler[0][2].product
+  coolerCost= cooler[0][2].cost
+  coolerImg = cooler[0][2].img
+  document.querySelector('.coolerBrand').innerText =cooler[0][2].brand
+  document.querySelector('.coolerProduct').innerText =cooler[0][2].product
+  document.querySelector('.coolerCost').innerText = cooler[0][2].cost
+  coolerCost = cooler[0][2].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[0][2].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function coolerCOption7() {
+  coolerName= cooler[0][1].product
+  coolerCost= cooler[0][1].cost
+  coolerImg = cooler[0][1].img
+  document.querySelector('.coolerBrand').innerText =cooler[0][1].brand
+  document.querySelector('.coolerProduct').innerText =cooler[0][1].product
+  document.querySelector('.coolerCost').innerText = cooler[0][1].cost
+  coolerCost = cooler[0][1].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[0][1].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//start of button 800
+function moboAOption8(){
+  cpuName = cpu[3][0].product
+  cpuCost = cpu[3][0].cost
+  cpuImg = cpu[3][0].img
+  moboName = mobo[3][0].product
+  moboImg = mobo[3][0].img
+  moboCost = mobo[3][0].cost
+  document.querySelector('.cpuBrand').innerText =cpu[3][0].brand
+  document.querySelector('.cpuProduct').innerText =cpuName
+  document.querySelector('.clock').innerText = cpu[3][0].clockSpeed
+  document.querySelector('.cpuCost').innerText = cpuCost
+  document.getElementById('cpuImg').src = `assets/css/${cpuImg}`
+  document.querySelector('.moboBrand').innerText =mobo[3][0].brand
+  document.querySelector('.moboProduct').innerText =moboName
+  document.querySelector('.moboCost').innerText = moboCost
+  document.getElementById('moboImg').src = `assets/css/${moboImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+  console.log(moboName , moboImg, cpuName , moboCost, total);
+  
+
+}
+function cpuBOption8(){
+ 
+  cpuName = cpu[1][0].product
+  cpuCost = cpu[1][0].cost
+  cpuImg = cpu[1][0].img
+  moboName = mobo[0][0].product
+  moboImg = mobo[0][0].img
+  moboCost = mobo[0][0].cost
+  console.log(mobo);
+  document.querySelector('.cpuBrand').innerText =cpu[1][0].brand
+  document.querySelector('.cpuProduct').innerText =cpu[1][0].product
+  document.querySelector('.clock').innerText = cpu[1][0].clockSpeed
+  document.querySelector('.cpuCost').innerText = cpu[1][0].cost
+  document.querySelector('.moboBrand').innerText =mobo[0][0].brand
+  document.querySelector('.moboProduct').innerText =moboName
+  document.querySelector('.moboCost').innerText = moboCost
+  document.getElementById('moboImg').src = `assets/css/${moboImg}`
+  cpuCost = cpu[1][0].cost
+  document.getElementById('cpuImg').src = `assets/css/${cpu[1][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function gpuAOption8(){
+  gpuCost = gpu[0][1].cost
+  gpuName= gpu[0][1].product
+  gpuImg = gpu[0][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[0][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function gpuBOption8(){
+  console.log(gpu[1][1]);
+  gpuCost = gpu[1][1].cost
+  gpuName= gpu[1][1].product
+  gpuImg = gpu[1][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[1][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function gpuCOption8(){
+  
+  gpuCost = gpu[1][1].cost
+  gpuName= gpu[1][1].product
+  gpuImg = gpu[1][1].img
+  document.querySelector('.gpuBrand').innerText =gpu[1][1].brand
+  document.querySelector('.gpuProduct').innerText =gpuName
+  document.querySelector('.gpuCost').innerText = gpuCost
+  document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function ramAOption8(){
+  ramCost = ram[4][0].cost
+  ramName = ram[4][0].product
+  ramImg = ram[4][0].img
+  document.querySelector('.ramBrand').innerText =ram[4][0].brand
+  document.querySelector('.ramProduct').innerText =ramName
+  document.querySelector('.ramCost').innerText = ramCost
+  document.querySelector('.ramClock').innerText=ram[4][0].clockSpeed
+  document.getElementById('ramImg').src = `assets/css/${ramImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function storageAOption8(){
+  console.log(storage[0][1]);
+  storageCost = storage[0][1].cost
+  storageName = storage[0][1].product
+  storageImg = storage[0][1].img
+  document.querySelector('.storageBrand').innerText =storage[0][1].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function storageBOption8(){
+  storageCost = storage[0][2].cost
+  storageName = storage[0][2].product
+  storageImg = storage[0][2].img
+  document.querySelector('.storageBrand').innerText =storage[0][2].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function storageCOption8(){
+  storageCost = storage[0][3].cost
+  storageName = storage[0][3].product
+  storageImg = storage[0][3].img
+  document.querySelector('.storageBrand').innerText =storage[0][3].brand
+  document.querySelector('.storageProduct').innerText =storageName
+  document.querySelector('.storageCost').innerText = storageCost
+  document.getElementById('storageImg').src = `assets/css/${storageImg}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function psuAOption8(){
+  psuName= power[0][1].product
+  psuCost= power[0][1].cost
+  psuImg = power[0][1].img
+  document.querySelector('.psuBrand').innerText =power[0][1].brand
+  document.querySelector('.psuProduct').innerText =power[0][1].product
+  document.querySelector('.psuCost').innerText = power[0][1].cost
+  document.getElementById('psuImg').src = `assets/css/${power[0][1].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+}
+function caseAOption8(){
+  caseName= pcCase[2][0].product
+  caseCost= pcCase[2][0].cost
+  caseImg = pcCase[2][0].img
+  document.querySelector('.caseBrand').innerText =pcCase[2][0].brand
+  document.querySelector('.caseProduct').innerText =pcCase[2][0].product
+  document.querySelector('.caseCost').innerText = pcCase[2][0].cost
+  document.getElementById('caseImg').src = `assets/css/${pcCase[2][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+  
+}
+function caseBOption8(){
+  caseName= pcCase[3][0].product
+  caseCost= pcCase[3][0].cost
+  caseImg = pcCase[3][0].img
+  document.querySelector('.caseBrand').innerText =pcCase[3][0].brand
+  document.querySelector('.caseProduct').innerText =pcCase[3][0].product
+  document.querySelector('.caseCost').innerText = pcCase[3][0].cost
+  document.getElementById('caseImg').src = `assets/css/${pcCase[3][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+  
+}
+function coolerAOption8() {
+  coolerName= cooler[3][0].product
+  coolerCost= cooler[3][0].cost
+  coolerImg = cooler[3][0].img
+  document.querySelector('.coolerBrand').innerText =cooler[3][0].brand
+  document.querySelector('.coolerProduct').innerText =cooler[3][0].product
+  document.querySelector('.coolerCost').innerText = cooler[3][0].cost
+  coolerCost = cooler[3][0].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[3][0].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function coolerBOption8() {
+  coolerName= cooler[0][2].product
+  coolerCost= cooler[0][2].cost
+  coolerImg = cooler[0][2].img
+  document.querySelector('.coolerBrand').innerText =cooler[0][2].brand
+  document.querySelector('.coolerProduct').innerText =cooler[0][2].product
+  document.querySelector('.coolerCost').innerText = cooler[0][2].cost
+  coolerCost = cooler[0][2].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[0][2].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
+function coolerCOption8() {
+  coolerName= cooler[0][1].product
+  coolerCost= cooler[0][1].cost
+  coolerImg = cooler[0][1].img
+  document.querySelector('.coolerBrand').innerText =cooler[0][1].brand
+  document.querySelector('.coolerProduct').innerText =cooler[0][1].product
+  document.querySelector('.coolerCost').innerText = cooler[0][1].cost
+  coolerCost = cooler[0][1].cost
+  document.getElementById('coolerImg').src = `assets/css/${cooler[0][1].img}`
+  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
+  document.getElementById('priceSpan').innerText= total
+
+}
 
 
 
@@ -620,11 +1222,105 @@ document.querySelectorAll('.sug').forEach(option =>{
       }else if(option.getAttribute('data')==='coolerC'){
         coolerCOption5()
       }
-
-
-
-
-
+    }else if(dataAttribute ==='600'){
+      if((option.getAttribute('data')==='moboA' )|| (option.getAttribute('data')==='cpuA' )){
+        console.log(dataAttribute);
+        moboAOption6()
+      }else if(option.getAttribute('data')==='gpuA' ){
+        gpuAOption6()
+      }else if(option.getAttribute('data')==='cpuB' ){
+        cpuBOption6()
+      }else if(option.getAttribute('data')==='gpuB' ){
+        gpuBOption6()
+      }else if(option.getAttribute('data')==='gpuC' ){
+        gpuCOption6()
+      }else if(option.getAttribute('data')==='ramA' ){
+        ramAOption6()
+      }else if(option.getAttribute('data')==='storageA'){
+        storageAOption6()
+      }else if(option.getAttribute('data')==='storageB'){
+        storageBOption6()
+      }else if(option.getAttribute('data')==='storageC'){
+        storageCOption6()
+      }else if(option.getAttribute('data')==='psuA'){
+        psuAOption6()
+      }else if(option.getAttribute('data')==='caseA'){
+        caseAOption6()
+      }else if(option.getAttribute('data')==='caseB'){
+        caseBOption6()
+      }else if(option.getAttribute('data')==='coolerA'){
+        coolerAOption6()
+      }else if(option.getAttribute('data')==='coolerB'){
+        coolerBOption6()
+      }else if(option.getAttribute('data')==='coolerC'){
+        coolerCOption6()
+      }
+    }else if(dataAttribute ==='700'){
+      if((option.getAttribute('data')==='moboA' )|| (option.getAttribute('data')==='cpuA' )){
+        console.log(dataAttribute);
+        moboAOption7()
+      }else if(option.getAttribute('data')==='gpuA' ){
+        gpuAOption7()
+      }else if(option.getAttribute('data')==='cpuB' ){
+        cpuBOption7()
+      }else if(option.getAttribute('data')==='gpuB' ){
+        gpuBOption7()
+      }else if(option.getAttribute('data')==='gpuC' ){
+        gpuCOption7()
+      }else if(option.getAttribute('data')==='ramA' ){
+        ramAOption7()
+      }else if(option.getAttribute('data')==='storageA'){
+        storageAOption7()
+      }else if(option.getAttribute('data')==='storageB'){
+        storageBOption7()
+      }else if(option.getAttribute('data')==='storageC'){
+        storageCOption7()
+      }else if(option.getAttribute('data')==='psuA'){
+        psuAOption7()
+      }else if(option.getAttribute('data')==='caseA'){
+        caseAOption7()
+      }else if(option.getAttribute('data')==='caseB'){
+        caseBOption7()
+      }else if(option.getAttribute('data')==='coolerA'){
+        coolerAOption7()
+      }else if(option.getAttribute('data')==='coolerB'){
+        coolerBOption7()
+      }else if(option.getAttribute('data')==='coolerC'){
+        coolerCOption7()
+      }
+    }else if(dataAttribute ==='800'){
+      if((option.getAttribute('data')==='moboA' )|| (option.getAttribute('data')==='cpuA' )){
+        console.log(dataAttribute);
+        moboAOption8()
+      }else if(option.getAttribute('data')==='gpuA' ){
+        gpuAOption8()
+      }else if(option.getAttribute('data')==='cpuB' ){
+        cpuBOption8()
+      }else if(option.getAttribute('data')==='gpuB' ){
+        gpuBOption8()
+      }else if(option.getAttribute('data')==='gpuC' ){
+        gpuCOption8()
+      }else if(option.getAttribute('data')==='ramA' ){
+        ramAOption8()
+      }else if(option.getAttribute('data')==='storageA'){
+        storageAOption8()
+      }else if(option.getAttribute('data')==='storageB'){
+        storageBOption8()
+      }else if(option.getAttribute('data')==='storageC'){
+        storageCOption8()
+      }else if(option.getAttribute('data')==='psuA'){
+        psuAOption8()
+      }else if(option.getAttribute('data')==='caseA'){
+        caseAOption8()
+      }else if(option.getAttribute('data')==='caseB'){
+        caseBOption8()
+      }else if(option.getAttribute('data')==='coolerA'){
+        coolerAOption8()
+      }else if(option.getAttribute('data')==='coolerB'){
+        coolerBOption8()
+      }else if(option.getAttribute('data')==='coolerC'){
+        coolerCOption8()
+      }
     }
   })
 
@@ -816,22 +1512,19 @@ document.querySelectorAll('li').forEach(item =>{
           document.querySelector('.motherOne').innerText = data.buildCost400[9].product
           let moboOneCost = data.buildCost400[9].cost
           document.querySelector('.motherOneCost').innerText = `$${moboOneCost}`
-          console.log(cpu, 'this is the cpu list');
           document.querySelector('.cpuOne').innerText = data.buildCost400[8].product
           let cpuOneCost = data.buildCost400[8].cost
           document.querySelector('.cpuOneCost').innerText = `$${cpuOneCost}`
-          document.querySelector('.cpuTwo').innerText = cpu[0][1].product
-          document.querySelector('.cpuTwoCost').innerText = `$${ cpu[0][1].cost}`
-
-          // document.querySelector('.gpuOne').innerText=
+          document.querySelector('.cpuTwo').innerText =cpu[1][0].product
+          document.querySelector('.cpuTwoCost').innerText = `$${ cpu[1][0].cost}`
           document.querySelector('.gpuOne').innerText = data.buildCost400[10].product
           let gpuOneCost = data.buildCost400[10].cost
           document.querySelector('.gpuOneCost').innerText = `$${gpuOneCost}`
          
           document.querySelector('.gpuTwo').innerText = gpu[2][0].product
           document.querySelector('.gpuTwoCost').innerText = `$${gpu[2][0].cost}`
-          document.querySelector('.gpuThree').innerText = gpu[3][0].product
-          document.querySelector('.gpuThreeCost').innerText = `$${gpu[3][0].cost}`
+          document.querySelector('.gpuThree').innerText = gpu[1][1].product
+          document.querySelector('.gpuThreeCost').innerText = `$${gpu[1][1].cost}`
         
           document.querySelector('.ramOne').innerText = ram[3][0].product
           document.querySelector('.ramOneCost').innerText =`$${ram[3][0].cost}`
@@ -957,7 +1650,7 @@ document.querySelectorAll('li').forEach(item =>{
 
 
 
-          saved(total,currentMoboName,currentCpuName,currentRamName , currentCaseName, currentCoolerName, currentPsuName, moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg )
+          saved( currentMoboName, currentCpuName, currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName, currentStorageName ,moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg )
         
           console.log(total);
         })
@@ -969,7 +1662,62 @@ document.querySelectorAll('li').forEach(item =>{
         .then(res=>res.json())
         .then(data =>{
           mapPcParts(data)
-          
+          document.querySelector('.motherOne').innerText = data.buildCost400[9].product
+          let moboOneCost = data.buildCost400[9].cost
+          document.querySelector('.motherOneCost').innerText = `$${moboOneCost}`
+          document.querySelector('.cpuOne').innerText = data.buildCost400[8].product
+          let cpuOneCost = data.buildCost400[8].cost
+          document.querySelector('.cpuOneCost').innerText = `$${cpuOneCost}`
+          document.querySelector('.cpuTwo').innerText =cpu[1][0].product
+          document.querySelector('.cpuTwoCost').innerText = `$${ cpu[1][0].cost}`
+          document.querySelector('.gpuOne').innerText = data.buildCost400[10].product
+          let gpuOneCost = data.buildCost400[10].cost
+          document.querySelector('.gpuOneCost').innerText = `$${gpuOneCost}`
+         
+          document.querySelector('.gpuTwo').innerText = gpu[2][0].product
+          document.querySelector('.gpuTwoCost').innerText = `$${gpu[2][0].cost}`
+          document.querySelector('.gpuThree').innerText = gpu[1][1].product
+          document.querySelector('.gpuThreeCost').innerText = `$${gpu[1][1].cost}`
+        
+          document.querySelector('.ramOne').innerText = ram[3][0].product
+          document.querySelector('.ramOneCost').innerText =`$${ram[3][0].cost}`
+       
+          document.querySelector('.storageOne').innerText = storage[0][1].product 
+          document.querySelector('.storageOneCost').innerText =`$${storage[0][1].cost}` 
+          document.querySelector('.storageTwo').innerText = storage[0][2].product 
+          document.querySelector('.storageTwoCost').innerText = `$${storage[0][2].cost}`
+          document.querySelector('.storageThree').innerText = storage[0][3].product 
+          document.querySelector('.storageThreeCost').innerText = `$${storage[0][3].cost}`
+        
+          document.querySelector('.psuOne').innerText = power[0][1].product
+          document.querySelector('.psuOneCost').innerText =`$${power[0][1].cost}` 
+
+          document.querySelector('.caseOne').innerText = pcCase[2][0].product
+          document.querySelector('.caseOneCost').innerText = `$${pcCase[2][0].cost}`
+          document.querySelector('.caseTwo').innerText = pcCase[3][0].product
+          document.querySelector('.caseTwoCost').innerText = `$${pcCase[3][0].cost}`
+          console.log(cooler[0]);
+          document.querySelector('.coolerOne').innerText = cooler[3][0].product
+          document.querySelector('.coolerOneCost').innerText = `$${cooler[3][0].cost}`
+          document.querySelector('.coolerTwo').innerText = cooler[0][2].product
+          document.querySelector('.coolerTwoCost').innerText = `$${cooler[0][2].cost}`
+          document.querySelector('.coolerThree').innerText = cooler[0][1].product
+          document.querySelector('.coolerThreeCost').innerText = `$${cooler[0][1].cost}`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           document.querySelector('.moboBrand').innerText =data.buildCost600[2].brand
           document.querySelector('.moboProduct').innerText =data.buildCost600[2].product
           document.querySelector('.moboCost').innerText = data.buildCost600[2].cost
@@ -1056,7 +1804,7 @@ document.querySelectorAll('li').forEach(item =>{
           coolerCost = data.buildCost600[7].cost
           let coolerImg= data.buildCost600[7].img
           document.getElementById('coolerImg').src = `assets/css/${coolerImg}`
-          saved(total,currentMoboName,currentCpuName,currentRamName , currentCaseName, currentCoolerName, currentPsuName, moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg )
+          saved( currentMoboName, currentCpuName, currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName, currentStorageName ,moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg )
           console.log(total);
         })
   
@@ -1069,6 +1817,60 @@ document.querySelectorAll('li').forEach(item =>{
         .then(res=>res.json())
         .then(data =>{
           mapPcParts(data)
+          document.querySelector('.motherOne').innerText = data.buildCost400[9].product
+          let moboOneCost = data.buildCost400[9].cost
+          document.querySelector('.motherOneCost').innerText = `$${moboOneCost}`
+          document.querySelector('.cpuOne').innerText = data.buildCost400[8].product
+          let cpuOneCost = data.buildCost400[8].cost
+          document.querySelector('.cpuOneCost').innerText = `$${cpuOneCost}`
+          document.querySelector('.cpuTwo').innerText =cpu[1][0].product
+          document.querySelector('.cpuTwoCost').innerText = `$${ cpu[1][0].cost}`
+          document.querySelector('.gpuOne').innerText = data.buildCost400[10].product
+          let gpuOneCost = data.buildCost400[10].cost
+          document.querySelector('.gpuOneCost').innerText = `$${gpuOneCost}`
+         
+          document.querySelector('.gpuTwo').innerText = gpu[2][0].product
+          document.querySelector('.gpuTwoCost').innerText = `$${gpu[2][0].cost}`
+          document.querySelector('.gpuThree').innerText = gpu[1][1].product
+          document.querySelector('.gpuThreeCost').innerText = `$${gpu[1][1].cost}`
+        
+          document.querySelector('.ramOne').innerText = ram[3][0].product
+          document.querySelector('.ramOneCost').innerText =`$${ram[3][0].cost}`
+       
+          document.querySelector('.storageOne').innerText = storage[0][1].product 
+          document.querySelector('.storageOneCost').innerText =`$${storage[0][1].cost}` 
+          document.querySelector('.storageTwo').innerText = storage[0][2].product 
+          document.querySelector('.storageTwoCost').innerText = `$${storage[0][2].cost}`
+          document.querySelector('.storageThree').innerText = storage[0][3].product 
+          document.querySelector('.storageThreeCost').innerText = `$${storage[0][3].cost}`
+        
+          document.querySelector('.psuOne').innerText = power[0][1].product
+          document.querySelector('.psuOneCost').innerText =`$${power[0][1].cost}` 
+
+          document.querySelector('.caseOne').innerText = pcCase[2][0].product
+          document.querySelector('.caseOneCost').innerText = `$${pcCase[2][0].cost}`
+          document.querySelector('.caseTwo').innerText = pcCase[3][0].product
+          document.querySelector('.caseTwoCost').innerText = `$${pcCase[3][0].cost}`
+          console.log(cooler[0]);
+          document.querySelector('.coolerOne').innerText = cooler[3][0].product
+          document.querySelector('.coolerOneCost').innerText = `$${cooler[3][0].cost}`
+          document.querySelector('.coolerTwo').innerText = cooler[0][2].product
+          document.querySelector('.coolerTwoCost').innerText = `$${cooler[0][2].cost}`
+          document.querySelector('.coolerThree').innerText = cooler[0][1].product
+          document.querySelector('.coolerThreeCost').innerText = `$${cooler[0][1].cost}`
+
+
+
+
+
+
+
+
+
+
+
+
+
           
           document.querySelector('.moboBrand').innerText =data.buildCost700[2].brand
           document.querySelector('.moboProduct').innerText =data.buildCost700[2].product
@@ -1154,7 +1956,7 @@ document.querySelectorAll('li').forEach(item =>{
           coolerCost = data.buildCost700[7].cost
           let coolerImg= data.buildCost700[7].img
           document.getElementById('coolerImg').src = `assets/css/${coolerImg}`
-          saved(total,currentMoboName,currentCpuName,currentRamName , currentCaseName, currentCoolerName, currentPsuName, moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg )
+          saved( currentMoboName, currentCpuName, currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName, currentStorageName ,moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg)
         })
    
     }
@@ -1164,7 +1966,59 @@ document.querySelectorAll('li').forEach(item =>{
         .then(res=>res.json())
         .then(data =>{
           mapPcParts(data)
-          
+          document.querySelector('.motherOne').innerText = data.buildCost400[9].product
+          let moboOneCost = data.buildCost400[9].cost
+          document.querySelector('.motherOneCost').innerText = `$${moboOneCost}`
+          document.querySelector('.cpuOne').innerText = data.buildCost400[8].product
+          let cpuOneCost = data.buildCost400[8].cost
+          document.querySelector('.cpuOneCost').innerText = `$${cpuOneCost}`
+          document.querySelector('.cpuTwo').innerText =cpu[1][0].product
+          document.querySelector('.cpuTwoCost').innerText = `$${ cpu[1][0].cost}`
+          document.querySelector('.gpuOne').innerText = data.buildCost400[10].product
+          let gpuOneCost = data.buildCost400[10].cost
+          document.querySelector('.gpuOneCost').innerText = `$${gpuOneCost}`
+         
+          document.querySelector('.gpuTwo').innerText = gpu[2][0].product
+          document.querySelector('.gpuTwoCost').innerText = `$${gpu[2][0].cost}`
+          document.querySelector('.gpuThree').innerText = gpu[1][1].product
+          document.querySelector('.gpuThreeCost').innerText = `$${gpu[1][1].cost}`
+        
+          document.querySelector('.ramOne').innerText = ram[3][0].product
+          document.querySelector('.ramOneCost').innerText =`$${ram[3][0].cost}`
+       
+          document.querySelector('.storageOne').innerText = storage[0][1].product 
+          document.querySelector('.storageOneCost').innerText =`$${storage[0][1].cost}` 
+          document.querySelector('.storageTwo').innerText = storage[0][2].product 
+          document.querySelector('.storageTwoCost').innerText = `$${storage[0][2].cost}`
+          document.querySelector('.storageThree').innerText = storage[0][3].product 
+          document.querySelector('.storageThreeCost').innerText = `$${storage[0][3].cost}`
+        
+          document.querySelector('.psuOne').innerText = power[0][1].product
+          document.querySelector('.psuOneCost').innerText =`$${power[0][1].cost}` 
+
+          document.querySelector('.caseOne').innerText = pcCase[2][0].product
+          document.querySelector('.caseOneCost').innerText = `$${pcCase[2][0].cost}`
+          document.querySelector('.caseTwo').innerText = pcCase[3][0].product
+          document.querySelector('.caseTwoCost').innerText = `$${pcCase[3][0].cost}`
+          console.log(cooler[0]);
+          document.querySelector('.coolerOne').innerText = cooler[3][0].product
+          document.querySelector('.coolerOneCost').innerText = `$${cooler[3][0].cost}`
+          document.querySelector('.coolerTwo').innerText = cooler[0][2].product
+          document.querySelector('.coolerTwoCost').innerText = `$${cooler[0][2].cost}`
+          document.querySelector('.coolerThree').innerText = cooler[0][1].product
+          document.querySelector('.coolerThreeCost').innerText = `$${cooler[0][1].cost}`
+
+
+
+
+
+
+
+
+
+
+
+
           document.querySelector('.moboBrand').innerText =data.buildCost800[2].brand
           document.querySelector('.moboProduct').innerText =data.buildCost800[2].product
           document.querySelector('.moboCost').innerText = data.buildCost800[2].cost
@@ -1253,7 +2107,7 @@ document.querySelectorAll('li').forEach(item =>{
 
 
 
-          saved(currentMoboName,currentCpuName,currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName)
+          saved( currentMoboName, currentCpuName, currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName, currentStorageName ,moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg)
         })
 
     }

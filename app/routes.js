@@ -19,36 +19,41 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
         db.collection('buildPost').find({'postID': uId}).sort({ _id: -1}).toArray((err, result) => {
           db.collection('likes').find({'likerId':uId}).sort({_id:-1}).toArray((err,result1)=>{
             if (err) return console.log(err)
-            let likesArr= []
+            let likesArr = []
             for (let i = 0; i < result1.length; i++){
              let postId= result1[i].postId
-            
               likesArr.push(ObjectID(postId))
             }
             db.collection('buildPost').find({'_id': { "$in" : likesArr}}).sort({ _id: -1}).toArray((err, resultLike) =>{
-              // db.collection('buildLikes').find({'likerId':uId}).sort({_id:-1}).toArray((err,likesData) =>{
-              //   if (err) return console.log(err)
+              db.collection('buildLikes').find({'likerId':uId}).sort({_id:-1}).toArray((err,resultBuildLikes) =>{
+                if (err) return console.log(err)
+                let buildLikedPost = []
+                for (let i = 0; i < resultBuildLikes.length; i++){
+                  let buildPostId= resultBuildLikes[i].postId
+                   buildLikedPost.push(ObjectID(buildPostId))
+                 }
+                 db.collection('createdBuilds').find({'_id': { "$in" : buildLikedPost}}).sort({ _id: -1}).toArray((err, createdLikes) =>{
+                  if (err) return console.log(err)
+                  console.log('this is my resultlike',resultLike);
+                  res.render('profile.ejs', {
+                    likedPost:resultLike,
+                    createdLikes:createdLikes,
+                    userName:req.user.local.userName,
+                    userPost: result
+                  })
 
 
+                 })
 
-              // })
-              console.log(uId);
-              if (err) return console.log(err)
-              console.log('this is my resultlike',resultLike);
-              res.render('profile.ejs', {
-                likedPost:resultLike,
-                userName:req.user.local.userName,
-                userPost: result
+
               })
 
             })
-            // console.log(likesArr);
           })
           if (err) return console.log(err)
         })
     });
     app.post('/buildInfo',isLoggedIn, function(req,res) {
-      console.log('this is my spoecs ',req.body);
       let uId = ObjectId(req.session.passport.user)
       db.collection('createdBuilds').save({
         moboName: req.body.moboName,
@@ -58,6 +63,7 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
         coolerName: req.body.coolerName,
         psuName: req.body.psuName,
         gpuName: req.body.gpuName,
+        storageName:req.body.storageName,
         total: req.body.totalCost,
         posterId:uId,
         userName:req.user.local.userName,
@@ -66,13 +72,10 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
       },(err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
-        res.redirect('/builds')
+        res.redirect('/forums')
       })
-
-
     })
     app.get('/forums', isLoggedIn , function(req,res) {
-      // console.log();
       db.collection('createdBuilds').find().sort({_id:-1}).toArray((err,result)=>{
         if (err) return console.log(err)
         res.render('forums.ejs',{
@@ -113,8 +116,6 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
           })
 
         })
-      // res.render('builds.ejs')
-
       }) 
     })
 
@@ -151,14 +152,10 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
               //return err
               if (err) return console.log(err)
               console.log('saved to database')
- 
-            // console.log('this is my post ID',result.ops[0].postID);
-     
               res.redirect('/builds')
          
             })
           }
-          // console.log(req);
         }
       })
     })
@@ -173,10 +170,7 @@ app.post('/commentPost/:id', (req, res) =>{
 
 })
 app.put('/updateLike', (req,res)=>{
-  // console.log('this is the id',req.body.postId);
-  // console.log('this is the number of likes',req.body.likes);
   let uId = ObjectId(req.session.passport.user)
-  // console.log('this is the user id' , uId);
   db.collection('buildPost').updateOne({_id:ObjectId(req.body.postId)}, {
     $set:{
       likes: req.body.likes + 1
@@ -184,23 +178,18 @@ app.put('/updateLike', (req,res)=>{
   },
   {
     upsert: true
-    //upsert - update is true
   },(err,result)=>{
     db.collection('likes').save({likerId:uId, postId:ObjectId(req.body.postId)}, (err, result) =>{
       if (err) return res.send(err)
       
     } )
     if (err) return res.send(err)
-    // console.log('this is the result', result);
     res.send(result)
   } )
   //
 })
 app.put('/updateBuildLike', (req,res)=>{
-  // console.log('this is the id',req.body.postId);
-  // console.log('this is the number of likes',req.body.likes);
   let uId = ObjectId(req.session.passport.user)
-  // console.log('this is the user id' , uId);
   db.collection('createdBuilds').updateOne({_id:ObjectId(req.body.postId)}, {
     $set:{
       likes: req.body.likes + 1
@@ -208,14 +197,12 @@ app.put('/updateBuildLike', (req,res)=>{
   },
   {
     upsert: true
-    //upsert - update is true
   },(err,result)=>{
     db.collection('buildLikes').save({likerId:uId, postId:ObjectId(req.body.postId)}, (err, result) =>{
       if (err) return res.send(err)
       
     } )
     if (err) return res.send(err)
-    // console.log('this is the result', result);
     res.send(result)
   } )
   //
