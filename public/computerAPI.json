@@ -7,7 +7,7 @@
             "cost": 100,
             "msg": "This CPU is special because it contains integrated graphics and has a Cooler included. Overall cutting costs from buying a GPU to maintain our Budget. Ryzen processors are very well known and very efficient.",
             "img":"apiIMG/ryzen3.png",
-            "clockSpeed": " ",
+            "clockSpeed": " 3.6GHz",
             "url":"https://www.shopblt.com/item/amd-ryzen-3-3200g-wraith-stealth/amd_yd3200c5fhbox.html"
         },
         {
@@ -67,9 +67,75 @@
             "brand": "be Quiet!",
             "product": "be Quiet! BK008 Pure Rock Slim",
             "cost": 25,
-            "img":"apiIMG/ryzen53400Cooler.png",
+            "img":"apiIMG/beQuiet.png",
             "url":"https://www.amazon.com/Quiet-BK008-Pure-Rock-Slim/dp/B01KVNCEIG/ref=sr_1_10?dchild=1&keywords=cpu+cooler&qid=1618347458&s=electronics&sr=1-10"
+        },
+        {
+            "type":"CPU",
+            "brand":"Intel",
+            "product":"CORE I3-10100F",
+            "cost":85,
+            "img":"apiIMG/i310th.png",
+            "clockSpeed":"3.6 GHz"
+        },
+        {
+            "type":"mobo",
+            "brand":"Asus",
+            "product":"Asus PRIME H410M-E",
+            "cost":80,
+            "img":"apiIMG/asush410.png"
+        },
+        {
+            "type":"GPU",
+            "brand":"Biostar Radeon",
+            "product":"Biostar Radeon RX 550 4GB",
+            "cost":240,
+            "img":"apiIMG/radeonrx550.png"
+        },
+        {
+            "type":"storage",
+            "brand":"Samsung",
+            "product":"SAMSUNG 870 EVO 1TB",
+            "cost":120,
+            "img":"apiIMG/samsung1tb.png"
+        },
+        {
+            "type":"storage",
+            "brand":"Kingston",
+            "product":"Kingston 240GB",
+            "cost":34,
+            "img":"apiIMG/kingston500g.png"
+        },
+        {
+            "type":"storage",
+            "brand":"Western Digital",
+            "product":"Western Digital 1TB Hard Drive",
+            "cost":45,
+            "img":"apiIMG/wd1tb.png"
+        },
+        {
+            "type":"powerSupply",
+            "brand":"EVGA",
+            "product":"EVGA 600 BR, 80+ Bronze 600W",
+            "cost":45,
+            "img":"apiIMG/evga600w.png"
+        },
+        {
+            "type":"cpuCooler",
+            "brand":"NZXT",
+            "product":"NZXT Kraken X53 240mm",
+            "cost":130,
+            "img":"apiIMG/kraken.png"
+        },
+        {
+            "type":"cpuCooler",
+            "brand":"Cooler Master",
+            "product":"Cooler Master MasterLiquid ML240L RGB",
+            "cost":80,
+            "img":"apiIMG/masterLiquid.png"
         }
+
+
     ],
     "buildCost500":[
         {
@@ -78,7 +144,7 @@
             "product": "RYZEN 5 3400G 4-Core,8-threads ",
             "cost": 155,
             "img":"apiIMG/ryzen53400g.png",
-            "clockSpeed": " ",
+            "clockSpeed": " 4.2GHz",
             "url":"https://www.shopblt.com/item/amd-ryzen-5-3400g-wraith-spire/amd_yd3400c5fhbox~b6qp162.html"
         },
         {
@@ -137,8 +203,15 @@
             "brand": "be Quiet!",
             "product": "be Quiet! BK008 Pure Rock Slim",
             "cost": 25,
-            "img":"apiIMG/ryzen53400Cooler.png",
+            "img":"apiIMG/beQuiet.png",
             "url":"https://www.amazon.com/Quiet-BK008-Pure-Rock-Slim/dp/B01KVNCEIG/ref=sr_1_10?dchild=1&keywords=cpu+cooler&qid=1618347458&s=electronics&sr=1-10"
+        },
+        {
+            "type":"GPU",
+            "brand":"MSI",
+            "product":"AMD Radeon RX 5500 xt 8gb",
+            "cost":500,
+            "img":"apiIMG/msi5500xt.png"
         }
     ],
     "buildCost600":[
@@ -207,7 +280,7 @@
             "brand": "be Quiet!",
             "product": "be Quiet! BK008 Pure Rock Slim",
             "cost": 25,
-            "img":"apiIMG/ryzen53400Cooler.png",
+            "img":"apiIMG/beQuiet.png",
             "url":"https://www.amazon.com/Quiet-BK008-Pure-Rock-Slim/dp/B01KVNCEIG/ref=sr_1_10?dchild=1&keywords=cpu+cooler&qid=1618347458&s=electronics&sr=1-10"
         }
     ],
@@ -277,7 +350,7 @@
             "brand": "EVGA",
             "product": "EVGA CLC 120mm All-In-One CPU Liquid Cooler",
             "cost": 57,
-            "img":"apiIMG/ryzen53400Cooler.png",
+            "img":"apiIMG/evgaAIO.png",
             "url":"https://www.amazon.com/EVGA-Liquid-Cooler-Cooling-400-HY-CL11-V1/dp/B07CNXHYJ2/ref=zg_bs_3015422011_32?_encoding=UTF8&refRID=CMMKNBYQGX7362NHBN61&th=1"
         }
     ],
@@ -296,8 +369,8 @@
             "brand": "AMD Radeon",
             "product": "XFX RX 570 4GB",
             "cost": 300,
-            "img":"file/path",
-            "clockSpeed": " ",
+            "img":"apiIMG/rx5704gb.png",
+            "clockSpeed": "apiIMG/rx5704gb.png",
             "url":"https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=XFX+RX+570+4GB&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=RX+5500+XT"
         },
         {
@@ -312,8 +385,8 @@
             "type":"RAM",
             "brand": "OLOy",
             "product": "OLOy DDR4 RAM 16GB (2x8GB) Warhawk Aura Sync RGB",
-            "cost": 0,
-            "img":"file/path",
+            "cost": 86,
+            "img":"apiIMG/oloy16gb.png",
             "clockSpeed": "3200MHz",
             "url":"https://www.amazon.com/OLOy-Warhawk-288-Pin-Desktop-MD4U0832160BE0DA/dp/B0894H3LS4/ref=sr_1_8?dchild=1&keywords=16gb+ram&qid=1618873565&sr=8-8"
         },
@@ -330,7 +403,7 @@
             "brand": "Thermaltake",
             "product": "Thermaltake TR2 600W",
             "cost": 52,
-            "img":"file/path",
+            "img":"apiIMG/thermaltake600w.png",
             "url":"https://www.amazon.com/Thermaltake-600W-Power-Supply-TR-600CUS/dp/B0058FAYQ2"
         },
         {
@@ -338,8 +411,8 @@
             "brand": "Antec",
             "product": "Antec Dapper Dark Phantom DP301M Black Steel /ARGB Lighting/Tempered Glass",
             "cost": 60,
-            "img":"file/path",
-            "clockSpeed": " ",
+            "img":"apiIMG/antecCase.png",
+            "clockSpeed": "apiIMG/antecCase.png",
             "url":"https://www.amazon.com/Antec-DP301M-Micro-Tower-Black-Micro-ATX/dp/B07N7J9WG9"
         },
         {
@@ -347,7 +420,7 @@
             "brand": "EVGA",
             "product": "EVGA CLC 120mm All-In-One CPU Liquid Cooler",
             "cost": 57,
-            "img":"apiIMG/ryzen53400Cooler.png",
+            "img":"apiIMG/evgaAIO.png",
             "url":"https://www.amazon.com/EVGA-Liquid-Cooler-Cooling-400-HY-CL11-V1/dp/B07CNXHYJ2/ref=zg_bs_3015422011_32?_encoding=UTF8&refRID=CMMKNBYQGX7362NHBN61&th=1"
         }
     ],

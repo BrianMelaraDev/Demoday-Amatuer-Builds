@@ -27,7 +27,7 @@
 						<nav id="nav">
 							<ul>
 								<li>
-									<a href="/indexAcc">Get Parts</a>
+									<a href="/forums">Draft Builds</a>
 									<!-- <ul>
 										<li><a href="#">Lorem ipsum dolor</a></li>
 										<li><a href="#">Magna phasellus</a></li>
@@ -44,7 +44,7 @@
 										<li><a href="#">Veroeros feugiat</a></li>
 									</ul> -->
 								</li>
-								<li><a href="/builds">Builds</a></li>
+								<li><a href="/builds">Completed Builds</a></li>
 								<li class="break"><a href="/profile">Profile</a></li>
 								<li><a href="/login"><i class="fas fa-sign-in-alt"></i></a></li>
 
@@ -58,7 +58,8 @@
 							<header>
 								<h2>Welcome to your Profile, <%=userName%></h2>
 							</header>
-							<p>Your posts and your likes will live here</p>
+							<p>Create your builds here!</p>
+							<p></p>
 							<!-- <ul class="actions">
 								<li><a href="#" class="button">$400</a></li>
 								<li><a href="#" class="button">$500</a></li>
@@ -92,9 +93,9 @@
 						<div id="profileFirstId" class="row">
 							<section id="profileSection">
 								<button class="posts" ><h2>Posts</h2></button>
-								<button class="saved" ><h2>Saved builds</h2></button>
+								<button class="saved" ><h2>Saved Completed builds</h2></button>
 								<form action="/logout" method="GET">
-									<button class="logout" ><h2>Logout</h2></button>
+									<button class="logout" ><h2>Saved draft builds</h2></button>
 								</form>
 								
 									<button class="editProfile" ><h2>Edit profile</h2></button>
@@ -264,16 +265,17 @@
 					<h2 class="priceHeaderChooser">Choose your Budget and get a build</h2>
 					<ul id="price" class="actions">
 						<li data="400" ><a  class="button">$400</a></li>
-						<li data="500" ><a href="" class="button">$500</a></li>
-						<li data="600" ><a href="" class="button">$600</a></li>
-						<li data="700" ><a href="" class="button">$700</a></li>
-						<li data="800" ><a href="" class="button">$800</a></li>
-						<li data="900" ><a href="" class="button">$900</a></li>
-						<li data="1000" ><a href="" class="button">$1000</a></li>
+						<li data="500" ><a  class="button">$500</a></li>
+						<li data="600" ><a  class="button">$600</a></li>
+						<li data="700" ><a class="button">$700</a></li>
+						<li data="800" ><a class="button">$800</a></li>
+						<li data="900" ><a  class="button">$900</a></li>
+						<li data="1000" ><a  class="button">$1000</a></li>
 						<!-- <li data="1100" ><a href="" class="button">$1100</a></li>
 						<li data="1200" ><a href="" class="button">$1200</a></li>
 						<li data="1300" ><a href="" class="button">$1300</a></li> -->
 					</ul>
+					<h2 class="priceHeader">Total Price: <span id="priceSpan">0</span> </h2> 
 					<!-- <form class="" action="index.html" method="post">
 						<select class="" name="">
 
@@ -286,6 +288,7 @@
 					</form> -->
 				</section>
 			<!-- Features 1 -->
+			
 				<div class="wrapper">
 					<div class="container">
 						<div id="firstId" class="row">
@@ -293,126 +296,196 @@
 							<section id="gpuOne" >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first moboImg"><img src="img/stockMobo.png" alt="" /></a>
+									<a href="#" class="image featured first moboImg"><img id='moboImg' src="img/stockMobo.png" alt="" /></a>
 								</div>
-								<header>
+							
 									<h2 class="moboBrand">Motherboard</h2> <h3 class="moboProduct"></h3> <h2>Cost:</h2> <h2 class="moboCost"></h2>
-								</header>
+							
 								<p>The Motherboard is where everything will connect to. Different sections of the motherboard perform differnt tasks that make a computer whole</p>
 								<p>Other Suggestions:</p>
-								<ul class="actions">
-									<form action="">
-
-										<li>
-											<input type="radio" name="choice" value="yes"> CPU1
-											
-										</li>
-										<li>
-											<input type="radio" name="choice" value="">CPU2
-
-										</li>
-
-									</form>
+							<div class="suggestions">
+								<button class="button sug" data="moboA">
+							
+									<p class="motherOne"></p>
+									<p class="motherOneCost"></p>
+								</button>
+								<button class="button sug" data="moboB">
+								
+							
+								</button>
+								<button class="button sug" data="moboC"></button>
+							</div>
 									
-								</ul>
 							</section>
 							</section>
 							<section >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured"><img src="img/stockCPU.png" alt="" /></a>
+									<a href="#" class="image featured"><img id="cpuImg" src="img/stockCPU.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>CPU</h2>
+									<h2 class="cpuBrand">Processesor</h2> <h3 class="cpuProduct"></h3> <h2>Cost:<h2 class="cpuCost"></h2> </h2> 
 								</header>
 								<p>The CPU is the brain of your computer . It contains threads and Cores. The Speed is based on GHz usually the higher the speed the more performance but performance is also based the number of Cores and Threads</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<p>ClockSpeed:<p class="clock">0</p></p>
+								<div class="suggestions">
+									<button class="button sug" data="cpuA">
+										<p class="cpuOne"></p>
+										<p class="cpuOneCost"></p>
+									</button>
+									<button class="button sug" data="cpuB">
+										<p class="cpuTwo"></p>
+										<p class="cpuTwoCost"></p>
+								
+									</button>
+									<button class="button sug" data="cpuC"></button>
+								</div>
 							</section>
 							</section>
 							<section id="gpuTwo" >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first"><img src="img/stockGPU.png" alt="" /></a>
+									<a href="#" class="image featured first"><img id="gpuImg" src="img/stockGPU.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>Graphics Card</h2>
+									<h2 class="gpuBrand">Graphics Card</h2> <h3 class="gpuProduct"></h3> <h2>Cost:</h2> <h2 class="gpuCost"></h2>
 								</header>
-								<p>The graphgics card also known as the (GPU) is a card that handles any graphics you render to your computer. This is the part you want to prioritize if you do video editing or PC gaming. The better the grpahics card the more smoothly images can be produced</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<p id="gpuMessage">The graphgics card also known as the (GPU) is a card that handles any graphics you render to your computer. This is the part you want to prioritize if you do video editing or PC gaming. The better the grpahics card the more smoothly images can be produced</p>
+								<div class="suggestions">
+									<button class="button sug" data="gpuA">
+										<p class="gpuOne"></p>
+										<p class="gpuOneCost"></p>
+									</button>
+									<button class="button sug" data="gpuB">
+										<p class="gpuTwo"></p>
+										<p class="gpuTwoCost"></p>
+								
+									</button>
+									<button class="button sug" data="gpuC">
+										<p class="gpuThree"></p>
+										<p class="gpuThreeCost"></p>
+									</button>
+								</div>
 								</section>
 							</section>
 							<section >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first"><img src="img/stockRAM.png" alt="" /></a>
+									<a href="#" class="image featured first"><img id="ramImg" src="img/stockRAM.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>RAM</h2>
+									<h2 class="ramBrand">RAM</h2> <h3 class="ramProduct"></h3> <h2>Cost:</h2> <h2 class="ramCost"></h2>
 								</header>
 								<p>The RAM also known as the (random access memory) , not to get confused with the stoage hard drive since they both deal with memory, deals with temprary memory in your computer. Applications and tabs create memory and it is stored so the more memory you have the more applications you can run simultaneously. </p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<p>ClockSpeed:<p class="ramClock"></p></p>
+								<div class="suggestions">
+									<button class="button sug" data="ramA">
+										<p class="ramOne"></p>
+										<p class="ramOneCost"></p>
+									</button>
+									<button class="button sug" data="ramB">
+										
+								
+									</button>
+									<button class="button sug" data="ramC"></button>
+								</div>
 								</section>
 							</section>
 							<section id="gpuThree" >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first"><img src="img/stockStorage.png" alt="" /></a>
+									<a href="#" class="image featured first"><img id="storageImg" src="img/stockStorage.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>Storage</h2>
+									<h2 class="storageBrand">Storage</h2> <h3 class="storageProduct"></h3> <h2>Cost:</h2> <h2 class="storageCost"></h2>
 								</header>
 								<p>This is your hard drive where all your files will be stored in as well as your opperating system. I will always recommend an SSD instead of a normal hard drive because of how dramatic the performance difference is. An SSD is one of the best upgrades you can do to your system and nowadays they're a lot cheaper than before. The next upgrade to a SSD would be an m.2 drive where some mothboards are supporting now. </p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<div class="suggestions">
+									<button class="button sug" data="storageA">
+										<p class="storageOne"></p>
+										<p class="storageOneCost"></p>
+									</button>
+									<button class="button sug" data="storageB">
+										<p class="storageTwo"></p>
+										<p class="storageTwoCost"></p>
+								
+									</button>
+									<button class="button sug" data="storageC">
+										<p class="storageThree"></p>
+										<p class="storageThreeCost"></p>
+									</button>
+								</div>
 								</section>
 							</section>
 							<section >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first"><img src="img/stockPSU.png" alt="" /></a>
+									<a href="#" class="image featured first"><img id="psuImg" src="img/stockPSU.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>Power Supply</h2>
+									<h2 class="psuBrand">PowerSupply</h2> <h3 class="psuProduct"></h3> <h2>Cost:</h2> <h2 class="psuCost"></h2>
 								</header>
 								<p>The PSU known as the power supply provides the nessesarry power you system needs. Thw wattage you will will differ with the different parts you will contain. If you have a powerful CPU and GPU you usually need a higher wattage PSU to support. All the builds I recommend will have no issues with power. </p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<div class="suggestions">
+									<button class="button sug" data="psuA">
+										<p class="psuOne"></p>
+										<p class="psuOneCost"></p>
+									</button>
+									<button class="button sug" data="psuB">
+									
+								
+									</button>
+									<button class="button sug" data="psuC"></button>
+								</div>
 								</section>
 							</section>
 							<section id="gpuFour" >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first"><img src="img/stockCase.png" alt="" /></a>
+									<a href="#" class="image featured first"><img id="caseImg" src="img/stockCase.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>Case</h2>
+									<h2 class="caseBrand">Case</h2> <h3 class="caseProduct"></h3> <h2>Cost:</h2> <h2 class="caseCost"></h2>
 								</header>
 								<p>The Case is where your PC will now live. There are many features you can look for but for a budget build it doesn't have to be expensive. The cases I will recommend will always be for a regular ATX motherboard. If you are intrested in a smaller system you would be intrested in a mini ATX build.</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<div class="suggestions">
+									<button class="button sug" data="caseA">
+										<p class="caseOne"></p>
+										<p class="caseOneCost"></p>
+									</button>
+									<button class="button sug" data="caseB">
+										<p class="caseTwo"></p>
+										<p class="caseTwoCost"></p>
+								
+									</button>
+									<button class="button sug" data="caseC"></button>
+								</div>
 								</section>
 							</section>
 							<section >
 								<section class='inner'>
 								<div >
-									<a href="#" class="image featured first"><img src="img/stockCooler.png" alt="" /></a>
+									<a href="#" class="image featured first"><img id="coolerImg" src="img/stockCooler.png" alt="" /></a>
 								</div>
 								<header>
-									<h2>CPU Cooler</h2>
+									<h2 class="coolerBrand">CPU Cooler</h2> <h3 class="coolerProduct"></h3> <h2>Cost:</h2> <h2 class="coolerCost"></h2>
 								</header>
-								<p>The CPU cooler is the cooler you will install on top of your CPU. Some CPU come with a stock cooler but it is notorious  </p>
-								<ul class="actions">
-									<li><a href="#" class="button">Purchase Now</a></li>
-								</ul>
+								<p  >The CPU cooler is the cooler you will install on top of your CPU. Some CPU come with a stock cooler but it is notorious  </p>
+								<div class="suggestions">
+									<button class="button sug" data="coolerA">
+										<p class="coolerOne"></p>
+										<p class="coolerOneCost"></p>
+									</button>
+									<button class="button sug" data="coolerB">
+										<p class="coolerTwo"></p>
+										<p class="coolerTwoCost"></p>
+								
+									</button>
+									<button class="button sug" data="coolerC">
+										<p class="coolerThree"></p>
+										<p class="coolerThreeCost"></p>
+									</button>
+								</div>
 								</section>
 							</section>
 						</div>
@@ -422,11 +495,15 @@
 			<!-- Promo -->
 			<div id="promo-wrapper">
 				<section id="promo">
-					<h2>Sign in and check out other people's builds and post your own!</h2>
-					<a href="/builds" class="button">Login</a>
+					<h2>Post this build for others to see!</h2>
+					<!-- <input type="submit" value="Submit"> -->
+				
+						<input  id="buildInfo" type="submit">
+						<!-- <a  type="submit" id="buildInfo" class="button">Submit</a> -->
+				
 				</section>
 			</div>
-
+		
 			<!-- Features 2 -->
 				<!-- <div class="wrapper">
 					<section class="container">
@@ -525,6 +602,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="main.js"></script>
+			<script src="profile.js"></script>
 
 	</body>
 </html>

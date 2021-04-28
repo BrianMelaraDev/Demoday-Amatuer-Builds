@@ -1,49 +1,8 @@
-const mapPcParts = (parts)=>{
-  var cpu = []
-  // const gpu 
-  // const mobo
-  // const ram 
-  // const storage 
-  // const powerSupply
-  // const pcCase
-const allPcBuildParts = Object.values(parts).forEach((pc) => {
-cpu.push(pc.filter((part) => part.type === "CPU"));
-})
 
-console.log("yerrrrrrrr", cpu)
-// allPcBuildParts.map((pc) => {
-// const cpu = pc.filter((pcPart) =>{
-//   pcPart.type === "CPU"
-// })
-// })
-
-// console.log("cpu", cpu);
-
-
-}
 
 // document.querySelector('.pfa-trash').addEventListener('click', trash)
 
-document.querySelectorAll('li').forEach(item =>{
-  item.addEventListener('click', event => {
-    console.log(item.getAttribute('data'));
-    if (item.getAttribute('data')==400 ){
-      console.log('joe malon')
-      fetch('/computerAPI.json')
-        .then(res=>res.json())
-        .then(data =>{
-          mapPcParts(data)
-          document.querySelector('.moboBrand').innerText =data.buildCost400[2].brand
-          document.querySelector('.moboProduct').innerText =data.buildCost400[2].product
-          document.querySelector('.moboCost').innerText = data.buildCost400[2].cost
-       
-          //first test for retriving data from my own api , will return the word CPU for the type
-
-
-        })
-    }
-  })
-})
+ 
 var coll = document.getElementsByClassName("collapsible");
 var i;
 

@@ -1,0 +1,16 @@
+.postDiv span{
+    height: 50px;
+    width: 100%;
+    float: left;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 800;
+    margin: .5rem 0;
+}
+#profileFeed .postDiv + div,#profileSection{
+    display: none;
+}
+.cost{
+    color: red !important;
+    text-align: center;
+}
