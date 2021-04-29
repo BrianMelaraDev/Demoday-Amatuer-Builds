@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Telephasic by HTML5 UP</title>
+		<title>Amateur Profile</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -94,13 +94,32 @@
 
 								</ul>
 								<ul id="editProfile" class="inactive">	
-									<h1>Edit your Profile</h1>
-									<li class='post' >
-										<form action="">
-											<input type="text">
-										</form>
-									</li>
-								
+									<% for(var i=0; i<createdLikes.length; i++) {%>
+										<li class='post' >
+											<div>
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].moboImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].cpuImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].gpuImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].ramImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].caseImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].psuImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].coolerImg%>">
+											<img class="likedImg" src="/assets/css/<%=createdLikes[i].storageImg%>">
+												
+											</div>
+											<div>
+											<h2 class="pcSpec">Cost: <%=createdLikes[i].total%></h2>
+											<h2 class="pcSpec" name="caption">Mothebaord: <%=createdLikes[i].moboName %></h2>
+											<h2 class="pcSpec">Processor: <%=createdLikes[i].cpuName %></h2>
+											<h2 class="pcSpec">Graphgics Card: <%=createdLikes[i].gpuName %></h2>
+											<h2 class="pcSpec">Storage: <%=createdLikes[i].storageName %></h2>
+											<h2 class="pcSpec">PowerSupply: <%=createdLikes[i].psuName %></h2>
+											<h2 class="pcSpec">Case: <%=createdLikes[i].caseName %></h2>
+											<h2 class="pcSpec">RAM: <%=createdLikes[i].ramName %></h2>
+											<h2 class="pcSpec">Cooler: <%=createdLikes[i].coolerName %></h2>
+										</div>
+										</li>
+										<% } %>
 
 
 								</ul>
@@ -120,7 +139,7 @@
 						<li data="1000" ><a  class="button">$1000</a></li>
 					
 					</ul>
-					<h2 class="priceHeader">Total Price: <span id="priceSpan">0</span> </h2> 
+					<h2 class="priceHeader total">Total Price: <span id="priceSpan">0</span> </h2> 
 					
 				</section>
 			<!-- Features 1 -->
@@ -135,7 +154,7 @@
 									<a href="#" class="image featured first moboImg"><img id='moboImg' src="img/stockMobo.png" alt="" /></a>
 								</div>
 							
-									<h2 class="moboBrand">Motherboard</h2> <h3 class="moboProduct"></h3> <h2>Cost:</h2> <h2 class="moboCost"></h2>
+									<h2 class="moboBrand">Motherboard</h2> <h3 class="moboProduct"></h3> <h2>Cost: <h2 class="moboCost"></h2></h2> 
 							
 								<p>The Motherboard is where everything will connect to. Different sections of the motherboard perform differnt tasks that make a computer whole</p>
 								<p>Other Suggestions:</p>
@@ -163,7 +182,8 @@
 									<h2 class="cpuBrand">Processesor</h2> <h3 class="cpuProduct"></h3> <h2>Cost:<h2 class="cpuCost"></h2> </h2> 
 								</header>
 								<p>The CPU is the brain of your computer . It contains threads and Cores. The Speed is based on GHz usually the higher the speed the more performance but performance is also based the number of Cores and Threads</p>
-								<p>ClockSpeed:<p class="clock">0</p></p>
+								<p>ClockSpeed:<span class="clock">0</span></p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="cpuA">
 										<p class="cpuOne"></p>
@@ -174,7 +194,10 @@
 										<p class="cpuTwoCost"></p>
 								
 									</button>
-									<button class="button sug" data="cpuC"></button>
+									<button class="button sug" data="cpuC">
+										<p class="cpuThree"></p>
+										<p class="cpuThreeCost"></p>
+									</button>
 								</div>
 							</section>
 							</section>
@@ -187,6 +210,7 @@
 									<h2 class="gpuBrand">Graphics Card</h2> <h3 class="gpuProduct"></h3> <h2>Cost:</h2> <h2 class="gpuCost"></h2>
 								</header>
 								<p id="gpuMessage">The graphgics card also known as the (GPU) is a card that handles any graphics you render to your computer. This is the part you want to prioritize if you do video editing or PC gaming. The better the grpahics card the more smoothly images can be produced</p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="gpuA">
 										<p class="gpuOne"></p>
@@ -213,7 +237,8 @@
 									<h2 class="ramBrand">RAM</h2> <h3 class="ramProduct"></h3> <h2>Cost:</h2> <h2 class="ramCost"></h2>
 								</header>
 								<p>The RAM also known as the (random access memory) , not to get confused with the stoage hard drive since they both deal with memory, deals with temprary memory in your computer. Applications and tabs create memory and it is stored so the more memory you have the more applications you can run simultaneously. </p>
-								<p>ClockSpeed:<p class="ramClock"></p></p>
+								<p>ClockSpeed:<span class="ramClock"></span></p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="ramA">
 										<p class="ramOne"></p>
@@ -236,6 +261,7 @@
 									<h2 class="storageBrand">Storage</h2> <h3 class="storageProduct"></h3> <h2>Cost:</h2> <h2 class="storageCost"></h2>
 								</header>
 								<p>This is your hard drive where all your files will be stored in as well as your opperating system. I will always recommend an SSD instead of a normal hard drive because of how dramatic the performance difference is. An SSD is one of the best upgrades you can do to your system and nowadays they're a lot cheaper than before. The next upgrade to a SSD would be an m.2 drive where some mothboards are supporting now. </p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="storageA">
 										<p class="storageOne"></p>
@@ -262,6 +288,7 @@
 									<h2 class="psuBrand">PowerSupply</h2> <h3 class="psuProduct"></h3> <h2>Cost:</h2> <h2 class="psuCost"></h2>
 								</header>
 								<p>The PSU known as the power supply provides the nessesarry power you system needs. Thw wattage you will will differ with the different parts you will contain. If you have a powerful CPU and GPU you usually need a higher wattage PSU to support. All the builds I recommend will have no issues with power. </p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="psuA">
 										<p class="psuOne"></p>
@@ -284,6 +311,7 @@
 									<h2 class="caseBrand">Case</h2> <h3 class="caseProduct"></h3> <h2>Cost:</h2> <h2 class="caseCost"></h2>
 								</header>
 								<p>The Case is where your PC will now live. There are many features you can look for but for a budget build it doesn't have to be expensive. The cases I will recommend will always be for a regular ATX motherboard. If you are intrested in a smaller system you would be intrested in a mini ATX build.</p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="caseA">
 										<p class="caseOne"></p>
@@ -307,6 +335,7 @@
 									<h2 class="coolerBrand">CPU Cooler</h2> <h3 class="coolerProduct"></h3> <h2>Cost:</h2> <h2 class="coolerCost"></h2>
 								</header>
 								<p  >The CPU cooler is the cooler you will install on top of your CPU. Some CPU come with a stock cooler but it is notorious  </p>
+								<p>Other Suggestions:</p>
 								<div class="suggestions">
 									<button class="button sug" data="coolerA">
 										<p class="coolerOne"></p>
@@ -340,42 +369,7 @@
 				</section>
 			</div>
 		
-			<!-- Features 2 -->
-				<!-- <div class="wrapper">
-					<section class="container">
-						<header class="major">
-							<h2>Sed magna consequat lorem curabitur tempus</h2>
-							<p>Elit aliquam vulputate egestas euismod nunc semper vehicula lorem blandit</p>
-						</header>
-						<div class="row features">
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper first">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
-						</div>
-						<ul class="actions major">
-							<li><a href="#" class="button">Elevate my awareness</a></li>
-						</ul>
-					</section>
-				</div> -->
-
+	
 			<!-- Footer -->
 			<div id="footer-wrapper">
 				<div id="footer" class="container">
@@ -405,20 +399,7 @@
 								</div>
 							</form>
 						</section>
-						<!-- <section class="col-6 col-12-narrower">
-							<div class="row gtr-0">
-								<ul class="divided icons col-6 col-12-mobile">
-									<li class="icon brands fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
-									<li class="icon brands fa-facebook-f"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
-									<li class="icon brands fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
-								</ul>
-								<ul class="divided icons col-6 col-12-mobile">
-									<li class="icon brands fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
-									<li class="icon brands fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
-									<li class="icon brands fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
-								</ul>
-							</div>
-						</section> -->
+					
 					</div>
 				</div>
 				<div id="copyright" class="container">

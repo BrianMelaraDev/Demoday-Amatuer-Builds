@@ -6,6 +6,7 @@
     color: black;
     font-weight: 800;
     margin: .5rem 0;
+    text-align: center;
 }
 #profileFeed .postDiv + div,#profileSection{
     display: none;
@@ -13,4 +14,14 @@
 .cost{
     color: red !important;
     text-align: center;
+    border: 1px solid;
+    background-color: aliceblue;
+}
+#profileFeed .images img{
+    padding: 0;
+    width: 185px;
+    height: 161px;
+    margin: 6px 3%;
+    border: 1px solid black;
+    padding: 11px;
 }

@@ -41,11 +41,7 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
                     userName:req.user.local.userName,
                     userPost: result
                   })
-
-
                  })
-
-
               })
 
             })
@@ -55,7 +51,16 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
     });
     app.post('/buildInfo',isLoggedIn, function(req,res) {
       let uId = ObjectId(req.session.passport.user)
+      console.log('this is my IMG',req.body);
       db.collection('createdBuilds').save({
+        caseImg:req.body.caseImg,
+        coolerImg:req.body.coolerImg,
+        psuImg:req.body.psuImg,
+        storageImg:req.body.storageImg,
+        ramImg:req.body.ramImg,
+        gpuImg:req.body.gpuImg,
+        cpuImg:req.body.cpuImg,
+        moboImg:req.body.moboImg,
         moboName: req.body.moboName,
         cpuName: req.body.cpuName,
         ramName: req.body.ramName,
@@ -146,7 +151,6 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
           } else{
 
             // console.log("success", req.file);
-            console.log(req.body);
             let uId = ObjectId(req.session.passport.user)
             db.collection('buildPost').save({caption: req.body.caption, postID:uId, userIMG:req.file, userName: req.user.local.userName, likes:0, mobo:req.body.motherboard, cpu: req.body.CPU, gpu:req.body.GPU, ram:req.body.RAM, storage:req.body.storage , case:req.body.case , powerSupply:req.body.powerSupply}, (err, result) => {
               //return err

@@ -89,7 +89,7 @@ input, select, textarea {
 
 
 #firstId .sug{
-    background: #000000a1;
+	background: #ffffffa1;
     float: left;
     width: 182px;
     height: auto;
@@ -121,8 +121,8 @@ input, select, textarea {
 	background: linear-gradient(-45deg, #ee76528f, #e73c7e8f, #23a5d593, #23d5ab8f);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	border-radius: 50px;
-	border: .5rem solid black;
+	border-radius: 7px;
+	border: .2rem solid black;
   }
   @keyframes gradient {
 	0% {
@@ -205,7 +205,7 @@ input, select, textarea {
     background: white;
     margin-left: 37px;
     margin-top: 39px;
-	
+	padding: 8px;
 }
 #firstId ul{
 	padding: 0;
@@ -2329,6 +2329,8 @@ margin: 0;
 			#nav > ul > li {
 				display: inline-block;
 				margin-left: 1em;
+				margin: 0;
+				padding: 0 3rem;
 			}
 
 				#nav > ul > li > ul {
@@ -2446,6 +2448,10 @@ margin: 0;
     	font-size: 4rem;
     	color: white;
     	font-weight: 200;
+	}
+	.info .total{
+		background-color: #000000ba;
+		font-weight: 800;
 	}
 	.priceHeaderChooser{
 		font-size: 2rem;

@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Telephasic by HTML5 UP</title>
+		<title>	Draft Builds</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -74,6 +74,17 @@
 								<section id="postSection">
 									<div class= "postDiv">
 										<p name="userName"> <%=createdBuild[i].userName%></p>
+										<div class="images">
+											<img src="/assets/css/<%=createdBuild[i].moboImg%>">
+											<img src="/assets/css/<%=createdBuild[i].cpuImg%>">
+											<img src="/assets/css/<%=createdBuild[i].gpuImg%>">
+											<img src="/assets/css/<%=createdBuild[i].ramImg%>">
+											<img src="/assets/css/<%=createdBuild[i].caseImg%>">
+											<img src="/assets/css/<%=createdBuild[i].psuImg%>">
+											<img src="/assets/css/<%=createdBuild[i].coolerImg%>">
+											<img src="/assets/css/<%=createdBuild[i].storageImg%>">
+											
+										</div>
 										<div>
 										<span class="cost" >Total Cost:<%=createdBuild[i].total%></span>
 										<span>Motherboard: <%=createdBuild[i].moboName%></span>
@@ -122,10 +133,10 @@
 
 			<!-- Promo -->
 				<div id="promo-wrapper">
-					<section id="promo">
+					<!-- <section id="promo">
 						<h2>Neque semper magna et lorem ipsum adipiscing</h2>
 						<a href="#" class="button">Breach the thresholds</a>
-					</section>
+					</section> -->
 				</div>
 
 			

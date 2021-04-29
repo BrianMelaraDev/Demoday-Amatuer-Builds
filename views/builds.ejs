@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Telephasic by HTML5 UP</title>
+		<title>Completed Builds</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -58,7 +58,7 @@
 								<h1><%= typeof msg != 'undefined' ? msg : '' %></h1>
 								<form action="/submissionPost" method="POST" enctype="multipart/form-data">
 									<div class="text-input">
-										<input name='caption' type="text" id="input1" placeholder="            Try typing something in here!">
+										<input name='caption' type="text" id="input1" placeholder="            Cost">
 										<label for="input1"><%=userName%></label>
 										<input type="text" name="motherboard" placeholder="Mothebaord">
 										<input type="text" name="CPU" placeholder="Processor">
@@ -71,7 +71,7 @@
 									  </div>
 									<input class='input' type="file" name="myFile">
 									
-									<input type="submit" value="Submit">
+									<input class="submit" type="submit" value="Submit">
 								</form>
 							</section>
 							<section id="profileFeed">
@@ -86,7 +86,7 @@
 									</div>
 									<div class="postDiv">
 										<div>
-											<h2 name="caption"><%=buildPost[i].post.caption%></h2>
+											<h2 name="caption">$<%=buildPost[i].post.caption%></h2>
 											<p>Motherboard: <%=buildPost[i].post.mobo%></p>
 											<p>CPU: <%=buildPost[i].post.cpu%></p>
 											<p>GPU: <%=buildPost[i].post.gpu%></p>
@@ -95,8 +95,9 @@
 											<p>Case: <%=buildPost[i].post.case%></p>
 											<p>PowerSupply: <%=buildPost[i].post.powerSupply%></p>
 										</div>
-										<div>
-											<button class="collapsible">Comments</button>
+										<div class="commentSection">
+											<!-- <button class="collapsible">Comments</button -->
+											<i class="fas fa-comments collapsible"></i>
 											<div id="commentSection" class="content">
 												<% for(var j=0; j<buildPost[i].comments.length; j++) {%>
 													<p><%=buildPost[i].comments[j].commentName%>-<%=buildPost[i].comments[j].comment%></p>
@@ -104,11 +105,11 @@
 											</div>
 											<form action="/commentPost/<%=buildPost[i].post._id%>" method="POST">
 												<label for="inp" class="inp">
-													<input type="text" id="inp" name="comment" placeholder="&nbsp;">
+													<input class="comment" type="text" id="inp" name="comment" placeholder="&nbsp;">
 													<span class="label">Comment</span>
 													<span class="focus-bg"></span>
 												  </label>
-												<input type="submit">
+												<input class="submit" type="submit">
 											</form>
 										</div>
 

@@ -352,7 +352,15 @@
             "cost": 57,
             "img":"apiIMG/evgaAIO.png",
             "url":"https://www.amazon.com/EVGA-Liquid-Cooler-Cooling-400-HY-CL11-V1/dp/B07CNXHYJ2/ref=zg_bs_3015422011_32?_encoding=UTF8&refRID=CMMKNBYQGX7362NHBN61&th=1"
+        },
+        {
+            "type":"CPU",
+            "brand":"Intel",
+            "product":"Intel Core i7-10700K",
+            "cost":325,
+            "img":"apiIMG/i710th.png"
         }
+
     ],
     "buildCost800":[
         {
@@ -427,351 +435,159 @@
     "buildCost900":[
         {
             "type":"CPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
+            "brand": "Intel",
+            "product": "Intel - Core i5-10400 10th Generation 6-Core - 12-Thread",
+            "cost": 150,
+            "img":"apiIMG/inteli510th.png",
+            "clockSpeed": "2.9 Ghz , 4.3Ghz Turbo",
+            "url":"https://www.bestbuy.com/site/intel-core-i5-10400-10th-generation-6-core-12-thread-2-9-ghz-4-3-ghz-turbo-socket-lga1200-locked-desktop-processor/6411498.p?skuId=6411498&ref=212&loc=1"
         },
         {
             "type":"GPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "AMD",
+            "product": "Radeon RX 580",
+            "cost": 450,
+            "img":"apiIMG/rx580.png",
             "clockSpeed": " ",
             "url":" "
         },
         {
             "type":"mobo",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
+            "brand": "GIGABYTE",
+            "product": "GIGABYTE H470M",
+            "cost": 110,
+            "img":"apiIMG/gigabyteH470m.png",
+            "url":"https://www.newegg.com/p/2MG-000K-000T4?Item=2MG-000K-000T4&nm_mc=AFC-RAN-COM&cm_mmc=AFC-RAN-COM&utm_medium=affiliates&utm_source=afc-PCPartPicker&AFFID=2558510&AFFNAME=PCPartPicker&ACRID=1&ASID=https%3a%2f%2fpcpartpicker.com%2f&ranMID=44583&ranEAID=2558510&ranSiteID=8BacdVP0GFs-IE5rCuxfHyJcyji.qvuv2g"
         },
         {
             "type":"RAM",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
+            "brand": "TEAMGROUP",
+            "product": "TEAMGROUP T-Force Vulcan Z DDR4 16GB",
+            "cost": 78,
+            "img":"apiIMG/team16gb.png",
+            "clockSpeed": "3000MHz",
+            "url":"https://www.amazon.com/OLOy-288-Pin-Desktop-Gaming-MD4U083016BJDA/dp/B083NPX9TJ/?tag=thowisguy-20"
         },
         {
             "type":"storage",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "Samsung",
+            "product": "SAMSUNG 870 EVO 500GB",
+            "cost": 65,
+            "img":"apiIMG/samsung500gb.png",
             "url":" "
         },
         {
             "type":"powerSupply",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
+            "brand": "Thermaltake",
+            "product": "Thermaltake TR2 600W",
+            "cost": 52,
+            "img":"apiIMG/thermaltake600w.png",
+            "url":"https://www.amazon.com/Thermaltake-600W-Power-Supply-TR-600CUS/dp/B0058FAYQ2"
         },
         {
             "type":"case",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "Phanteks",
+            "product": "Phanteks Eclipse P400 Steel ATX Mid Tower",
+            "cost": 70,
+            "img":"apiIMG/phanteks.png",
             "clockSpeed": " ",
             "url":" "
         },
         {
             "type":"cpuCooler",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "Cooler Master",
+            "product": "Cooler Master Hyper 212",
+            "cost": 45,
+            "img":"apiIMG/hyper212.png",
+            "url":" "
+        },
+        {
+            "type":"GPU",
+            "brand": "Nvidia",
+            "product": "Nvidia GeForce GTX 1660 Super",
+            "cost": 550,
+            "img":"apiIMG/1660gtx.png",
+            "clockSpeed": " ",
             "url":" "
         }
     ],
     "buildCost1000":[
         {
             "type":"CPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
+            "brand": "Intel",
+            "product": "Intel Core i7-10700K",
+            "cost": 325,
+            "img":"apiIMG/inteli510th.png",
+            "clockSpeed": "2.9 Ghz , 4.3Ghz Turbo",
+            "url":"https://www.bestbuy.com/site/intel-core-i5-10400-10th-generation-6-core-12-thread-2-9-ghz-4-3-ghz-turbo-socket-lga1200-locked-desktop-processor/6411498.p?skuId=6411498&ref=212&loc=1"
         },
         {
             "type":"GPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
+            "brand": "AMD Radeon",
+            "product": "XFX RX 570 4GB",
+            "cost": 300,
+            "img":"apiIMG/rx5704gb.png",
+            "clockSpeed": "apiIMG/rx5704gb.png",
+            "url":"https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=XFX+RX+570+4GB&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=RX+5500+XT"
         },
         {
             "type":"mobo",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
+            "brand": "GIGABYTE",
+            "product": "GIGABYTE H470M",
+            "cost": 110,
+            "img":"apiIMG/gigabyteH470m.png",
+            "url":"https://www.newegg.com/p/2MG-000K-000T4?Item=2MG-000K-000T4&nm_mc=AFC-RAN-COM&cm_mmc=AFC-RAN-COM&utm_medium=affiliates&utm_source=afc-PCPartPicker&AFFID=2558510&AFFNAME=PCPartPicker&ACRID=1&ASID=https%3a%2f%2fpcpartpicker.com%2f&ranMID=44583&ranEAID=2558510&ranSiteID=8BacdVP0GFs-IE5rCuxfHyJcyji.qvuv2g"
         },
         {
             "type":"RAM",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
+            "brand": "TEAMGROUP",
+            "product": "TEAMGROUP T-Force Vulcan Z DDR4 16GB",
+            "cost": 78,
+            "img":"apiIMG/team16gb.png",
+            "clockSpeed": "3000MHz",
+            "url":"https://www.amazon.com/OLOy-288-Pin-Desktop-Gaming-MD4U083016BJDA/dp/B083NPX9TJ/?tag=thowisguy-20"
         },
         {
             "type":"storage",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "Samsung",
+            "product": "SAMSUNG 870 EVO 500GB",
+            "cost": 65,
+            "img":"apiIMG/samsung500gb.png",
             "url":" "
         },
         {
             "type":"powerSupply",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
+            "brand": "Thermaltake",
+            "product": "Thermaltake TR2 600W",
+            "cost": 52,
+            "img":"apiIMG/thermaltake600w.png",
+            "url":"https://www.amazon.com/Thermaltake-600W-Power-Supply-TR-600CUS/dp/B0058FAYQ2"
         },
         {
             "type":"case",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "Phanteks",
+            "product": "Phanteks Eclipse P400 Steel ATX Mid Tower",
+            "cost": 70,
+            "img":"apiIMG/phanteks.png",
             "clockSpeed": " ",
             "url":" "
         },
         {
             "type":"cpuCooler",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
+            "brand": "Cooler Master",
+            "product": "Cooler Master Hyper 212",
+            "cost": 45,
+            "img":"apiIMG/hyper212.png",
             "url":" "
-        }
-    ],
-    "buildCost1100":[
+        },
         {
             "type":"CPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"GPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"mobo",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"RAM",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"storage",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"powerSupply",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"case",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"cpuCooler",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        }
-    ],
-    "buildCost1200":[
-        {
-            "type":"CPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"GPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"mobo",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"RAM",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"storage",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"powerSupply",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"case",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"cpuCooler",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        }
-    ],
-    "buildCost1300":[
-        {
-            "type":"CPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"GPU",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"mobo",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"RAM",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"storage",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"powerSupply",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
-        },
-        {
-            "type":"case",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "clockSpeed": " ",
-            "url":" "
-        },
-        {
-            "type":"cpuCooler",
-            "brand": " ",
-            "product": " ",
-            "cost": 0,
-            "img":"file/path",
-            "url":" "
+            "brand": "Intel",
+            "product": "Intel Core i7-10700K",
+            "cost": 325,
+            "img":"apiIMG/inteli510th.png",
+            "clockSpeed": "2.9 Ghz , 4.3Ghz Turbo",
+            "url":"https://www.bestbuy.com/site/intel-core-i5-10400-10th-generation-6-core-12-thread-2-9-ghz-4-3-ghz-turbo-socket-lga1200-locked-desktop-processor/6411498.p?skuId=6411498&ref=212&loc=1"
         }
     ]
     
