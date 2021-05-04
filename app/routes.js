@@ -33,13 +33,18 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
                    buildLikedPost.push(ObjectID(buildPostId))
                  }
                  db.collection('createdBuilds').find({'_id': { "$in" : buildLikedPost}}).sort({ _id: -1}).toArray((err, createdLikes) =>{
-                  if (err) return console.log(err)
-                  console.log('this is my resultlike',resultLike);
-                  res.render('profile.ejs', {
-                    likedPost:resultLike,
-                    createdLikes:createdLikes,
-                    userName:req.user.local.userName,
-                    userPost: result
+                  db.collection('createdBuilds').find({'posterId': uId}).sort({ _id: -1}).toArray((err, userLikes) => {
+                    if (err) return console.log(err)
+                    console.log('this is my resultlike',userLikes);
+                    res.render('profile.ejs', {
+                      userLikes: userLikes,
+                      likedPost:resultLike,
+                      createdLikes:createdLikes,
+                      userName:req.user.local.userName,
+                      userPost: result
+                    })
+
+
                   })
                  })
               })
@@ -49,37 +54,6 @@ module.exports = function(app, passport, db, ObjectID, multer, storage , upload)
           if (err) return console.log(err)
         })
     });
-    app.post('/buildInfo',isLoggedIn, function(req,res) {
-      let uId = ObjectId(req.session.passport.user)
-      console.log('this is my IMG',req.body);
-      db.collection('createdBuilds').save({
-        caseImg:req.body.caseImg,
-        coolerImg:req.body.coolerImg,
-        psuImg:req.body.psuImg,
-        storageImg:req.body.storageImg,
-        ramImg:req.body.ramImg,
-        gpuImg:req.body.gpuImg,
-        cpuImg:req.body.cpuImg,
-        moboImg:req.body.moboImg,
-        moboName: req.body.moboName,
-        cpuName: req.body.cpuName,
-        ramName: req.body.ramName,
-        caseName: req.body.caseName,
-        coolerName: req.body.coolerName,
-        psuName: req.body.psuName,
-        gpuName: req.body.gpuName,
-        storageName:req.body.storageName,
-        total: req.body.totalCost,
-        posterId:uId,
-        userName:req.user.local.userName,
-        likes:0,
-        
-      },(err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/forums')
-      })
-    })
     app.get('/forums', isLoggedIn , function(req,res) {
       db.collection('createdBuilds').find().sort({_id:-1}).toArray((err,result)=>{
         if (err) return console.log(err)
@@ -173,6 +147,37 @@ app.post('/commentPost/:id', (req, res) =>{
   } )
 
 })
+app.post('/buildInfo',isLoggedIn, function(req,res) {
+  let uId = ObjectId(req.session.passport.user)
+  console.log('this is my IMG',req.body);
+  db.collection('createdBuilds').save({
+    caseImg:req.body.caseImg,
+    coolerImg:req.body.coolerImg,
+    psuImg:req.body.psuImg,
+    storageImg:req.body.storageImg,
+    ramImg:req.body.ramImg,
+    gpuImg:req.body.gpuImg,
+    cpuImg:req.body.cpuImg,
+    moboImg:req.body.moboImg,
+    moboName: req.body.moboName,
+    cpuName: req.body.cpuName,
+    ramName: req.body.ramName,
+    caseName: req.body.caseName,
+    coolerName: req.body.coolerName,
+    psuName: req.body.psuName,
+    gpuName: req.body.gpuName,
+    storageName:req.body.storageName,
+    total: req.body.totalCost,
+    posterId:uId,
+    userName:req.user.local.userName,
+    likes:0,
+    
+  },(err, result) => {
+    if (err) return console.log(err)
+    console.log('saved to database')
+    res.render('forums.ejs')
+  })
+})
 app.put('/updateLike', (req,res)=>{
   let uId = ObjectId(req.session.passport.user)
   db.collection('buildPost').updateOne({_id:ObjectId(req.body.postId)}, {
@@ -218,6 +223,7 @@ app.delete('/delPost', (req,res) =>{
 
     if (err) return res.send(500, err)
     res.send('Message deleted!')
+    
   })
 
 

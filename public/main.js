@@ -1,8 +1,5 @@
 
 
-// document.querySelector('.pfa-trash').addEventListener('click', trash)
-
- 
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -34,82 +31,8 @@ $(function() {
       }, 1250 );
     }
   });
-// function trash(){
-//     console.log("trash is click");
-// }
-// document.querySelectorAll('.fa-trash').forEach(item => {
-//     item.addEventListener('click', event => {
 
-//       console.log(item);
-//     })
-//   })
-// const deleteText = document.querySelectorAll('.fa-trash')
-// Array.from(deleteText).forEach((element)=>{
-//     element.addEventListener('click',deletePost)
-// })
-// async function deletePost(){
-//     const caption= this.parentNode.childNodes[1].innerText
-//     try{
-//         const response = await fetch('deletePost',{
-//             method:'delete',
-//             headers:{'Content0Type':'application/json'},
-//             body:JSON.stringify({
-//                 'caption':caption
-//             })
-//         })
-//         const data = await response.json()
-//         console.log(data);
-//         location.reload()
-//     }catch(err){
-//         console.log(err);
-//     }
-// }
-// let likes = document.querySelector('.fa-heart').addEventListener('click', heart)
-// Array.from(thumbUp).forEach(function(element) {
-//   //creates an array for element for thumbs up
-//       element.addEventListener('click', function(){
-//         //for the element we are creating an event Listener of click, so on the clikc of thumbs up
-
-//         const name = this.parentNode.parentNode.childNodes[1].innerText
-//         const msg = this.parentNode.parentNode.childNodes[3].innerText
-//         const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
-//         //these variables are targetting the child
-//         fetch('thumbUp', {
-//           method: 'put',
-//           headers: {'Content-Type': 'application/json'},
-//           body: JSON.stringify({
-//             'name': name,
-//             'msg': msg,
-//             'thumbUp':thumbUp
-//           })
-//         })
-//         .then(response => {
-//           if (response.ok) return response.json()
-//         })
-//         .then(data => {
-//           console.log(data)
-//           window.location.reload(true)
-//         })
-//       });
-// });
-// document.querySelector('.fa-trash').addEventListener('click', event => {
-//     const caption= this.parentNode.childNodes[1].innerText
-//     try{
-//         const response = await fetch('deletePost',{
-//             method:'delete',
-//             headers:{'Content0Type':'application/json'},
-//             body:JSON.stringify({
-//                 'caption':caption
-//             })
-//         })
-//         const data = await response.json()
-//         console.log(data);
-//         location.reload()
-//     }catch(err){
-//         console.log(err);
-//     }
-//   })
-const ul = document.querySelector('#myPosts');
+const ul = document.querySelector('.myPosts');
 ul.addEventListener('click', deletePost);
 function deletePost(e) {
   if (e.target.classList.contains('fa-trash')) {
@@ -122,7 +45,19 @@ function deletePost(e) {
   }
   // console.log(postId);
 } 
-
+const ul = document.querySelector('.myPosts');
+ul.addEventListener('click', deletePost);
+function deletePost(e) {
+  if (e.target.classList.contains('fa-trash')) {
+    var postId = e.target.closest('.post').querySelector('a').getAttribute('href').slice(9);
+    fetch('delPost', {
+      method: 'delete',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify({ id: postId })
+    }).then(() => { window.location.reload() })  
+  }
+  // console.log(postId);
+} 
 // document.querySelectorAll('.fa-trash').forEach(item => {
 //     item.addEventListener('click', event => {
 //         async function deletePost(){

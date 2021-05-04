@@ -1,6 +1,3 @@
-
-
-
 var moboCost
 var cpuCost
 var gpuCost
@@ -10,7 +7,6 @@ var psuCost
 var caseCost
 var coolerCost
 var total 
-
 document.getElementById('buildInfo').addEventListener('click', post)
 let moboName 
 let cpuName
@@ -32,30 +28,10 @@ let storageImg
 function saved( currentMoboName, currentCpuName, currentRamName , currentCaseName, currentCoolerName, currentPsuName, currentGpuName, currentStorageName ,moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg){
  total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   
-//   moboName = currentMoboName
-//   cpuName = currentCpuName
-//   ramName = currentRamName
-//   caseName = currentCaseName
-//   coolerName = currentCoolerName
-//   psuName = currentPsuName
-//   gpuName = currentGpuName
-//   storageName = currentStorageName
-//   moboImg = moboImg
-//   cpuImg = cpuImg
-//   ramImg =ramImg
-//   caseImg =caseImg
-//  coolerImg =coolerImg
-//  psuImg =psuImg
-//  gpuImg =gpuImg
-//  storageImg= storageImg
   console.log(caseImg);
   document.getElementById('priceSpan').innerText= total
-  // console.log('this is the name and cost', moboImg, cpuImg, ramImg, storageImg, psuImg, caseImg, coolerImg, gpuImg);
 }
 function post(){
-  // console.log(moboName, cpuName, ramName, caseName, coolerName, psuName, gpuName, storageName,totalCost);
-  console.log();
-
     fetch('buildInfo', {
     method: 'post',
     headers: {'Content-Type' : 'application/json'},
@@ -272,15 +248,15 @@ function coolerCOption4() {
 }
 //start of button $500
 function moboAOption5(){
-  cpuName = cpu[3][0].product
-  cpuCost = cpu[3][0].cost
-  cpuImg = cpu[3][0].img
+  cpuName = cpu[0][1].product
+  cpuCost = cpu[0][1].cost
+  cpuImg = cpu[0][1].img
   moboName = mobo[3][0].product
   moboImg = mobo[3][0].img
   moboCost = mobo[3][0].cost
-  document.querySelector('.cpuBrand').innerText =cpu[3][0].brand
+  document.querySelector('.cpuBrand').innerText =cpu[0][1].brand
   document.querySelector('.cpuProduct').innerText =cpuName
-  document.querySelector('.clock').innerText = cpu[3][0].clockSpeed
+  document.querySelector('.clock').innerText = cpu[0][1].clockSpeed
   document.querySelector('.cpuCost').innerText = cpuCost
   document.getElementById('cpuImg').src = `assets/css/${cpuImg}`
   document.querySelector('.moboBrand').innerText =mobo[3][0].brand
@@ -664,16 +640,8 @@ function coolerCOption6() {
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
 }
-
-
-
-
-
-
-
-
-
-//start of button 700
+ 
+//                                                                            start of button 700
 function moboAOption7(){
   cpuName = cpu[0][1].product
   cpuCost = cpu[0][1].cost
@@ -900,27 +868,7 @@ function coolerCOption7() {
   document.getElementById('priceSpan').innerText= total
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//start of button 800
+//                                                                                                start of button 800
 function moboAOption8(){
   cpuName = cpu[0][1].product
   cpuCost = cpu[0][1].cost
@@ -1147,18 +1095,7 @@ function coolerCOption8() {
   document.getElementById('priceSpan').innerText= total
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
+//                                                                            start of data button 900
 function moboAOption9(){
   cpuName = cpu[0][1].product
   cpuCost = cpu[0][1].cost
@@ -1368,33 +1305,6 @@ function coolerCOption9() {
   total = moboCost + cpuCost + gpuCost + ramCost + storageCost + psuCost + caseCost + coolerCost
   document.getElementById('priceSpan').innerText= total
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.querySelectorAll('.sug').forEach(option =>{
   option.addEventListener('click', start =>{
     console.log(option.getAttribute('data'));
@@ -1640,27 +1550,7 @@ document.querySelectorAll('.sug').forEach(option =>{
     }
   })
 
-    
-
-    // console.log(option.getAttribute('data'));
-
 })
-
-
-
-
-
-
-
-
-// function totalBuildCost(){
-//   total = moboCost + cpuCost  + ramCost + storageCost + psuCost + caseCost + coolerCost
-//   console.log('this is the mobo cost',moboCost , cpuCost , ramCost , storageCost , psuCost, caseCost , coolerCost );
-//   console.log('this is the total', total);
-// }
-
-
-
 
 // } 
 var dataAttribute 
@@ -2682,7 +2572,8 @@ document.querySelectorAll('li').forEach(item =>{
           let currentMoboPrice = data.buildCost1000[2].cost
           // total(data.buildCost400[2].cost)
           moboCost = data.buildCost1000[2].cost
-          let moboImg= data.buildCost1000[2].img
+          moboImg= data.buildCost1000[2].img
+          moboName = data.buildCost1000[2].product
           document.getElementById('moboImg').src = `assets/css/${moboImg}`
 
 
@@ -2695,7 +2586,8 @@ document.querySelectorAll('li').forEach(item =>{
           let currentCpuPrice = data.buildCost1000[0].cost
           cpuCost = data.buildCost1000[0].cost
           // total(data.buildCost400[0].cost)
-          let cpuImg= data.buildCost1000[0].img
+          cpuImg= data.buildCost1000[0].img
+          cpuName = data.buildCost1000[0].product
           document.getElementById('cpuImg').src = `assets/css/${cpuImg}`
 
           document.querySelector('.gpuBrand').innerText =data.buildCost1000[1].brand
@@ -2704,7 +2596,8 @@ document.querySelectorAll('li').forEach(item =>{
           let currentGpuName = data.buildCost1000[1].product
           let currentGpuPrice = data.buildCost1000[1].cost
           gpuCost = data.buildCost1000[1].cost
-          let gpuImg= data.buildCost1000[1].img
+          gpuImg= data.buildCost1000[1].img
+          gpuName = data.buildCost1000[1].product
           document.getElementById('gpuImg').src = `assets/css/${gpuImg}`
 
 
@@ -2718,7 +2611,8 @@ document.querySelectorAll('li').forEach(item =>{
           let currentRamName = data.buildCost1000[3].product
           let currentRamPrice = data.buildCost1000[3].cost
           ramCost = data.buildCost1000[3].cost
-          let ramImg= data.buildCost1000[3].img
+          ramImg= data.buildCost1000[3].img
+          ramName = data.buildCost1000[3].product
           document.getElementById('ramImg').src = `assets/css/${ramImg}`
 
 
@@ -2728,7 +2622,8 @@ document.querySelectorAll('li').forEach(item =>{
           let currentStorageName = data.buildCost1000[4].product
           let currentStoragePrice = data.buildCost1000[4].cost
           storageCost = data.buildCost1000[4].cost
-          let storageImg= data.buildCost1000[4].img
+          storageImg= data.buildCost1000[4].img
+          storageName = data.buildCost1000[4].product
           document.getElementById('storageImg').src = `assets/css/${storageImg}`
 
           
@@ -2739,7 +2634,7 @@ document.querySelectorAll('li').forEach(item =>{
           let currentPsuName = data.buildCost1000[5].product
           let currentPsuPrice = data.buildCost1000[5].cost
           psuCost = data.buildCost1000[5].cost
-          let psuImg= data.buildCost1000[5].img
+          psuImg= data.buildCost1000[5].img
           document.getElementById('psuImg').src = `assets/css/${psuImg}`
 
           
@@ -2748,8 +2643,9 @@ document.querySelectorAll('li').forEach(item =>{
           document.querySelector('.caseCost').innerText = data.buildCost1000[6].cost
           let currentCaseName = data.buildCost1000[6].product
           let currentCasePrice = data.buildCost1000[6].cost
-          let caseImg= data.buildCost1000[6].img
+          caseImg= data.buildCost1000[6].img
           caseCost = data.buildCost1000[6].cost
+          caseName = data.buildCost1000[6].product
           document.getElementById('caseImg').src = `assets/css/${caseImg}`
 
           document.querySelector('.coolerBrand').innerText =data.buildCost1000[7].brand
@@ -2758,7 +2654,8 @@ document.querySelectorAll('li').forEach(item =>{
           let currentCoolerName = data.buildCost1000[7].product
           let currentCoolerPrice = data.buildCost1000[7].cost
           coolerCost = data.buildCost1000[7].cost
-          let coolerImg= data.buildCost1000[7].img
+          coolerImg= data.buildCost1000[7].img
+          coolerName = data.buildCost1000[7].product
           document.getElementById('coolerImg').src = `assets/css/${coolerImg}`
 
 
